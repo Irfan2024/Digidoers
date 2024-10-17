@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+    <header class="absolute left-0 right-0 z-[1030]">
+        <nav
+            class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+            <div class="w-full relative flex justify-between items-center flex-nowrap">
+                <div class="flex items-center brand-breadcrumb">
+                    <div class="flex items-end">
+                        <a class="max-w-[80px] mr-3" href="#">
+                            <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45"
+                                alt="">
+                        </a>
+                        <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Purpose, Vision + Values</span>
+                    </div>
+                </div>
+                <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+                    <div
+                        class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+                        <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }"
+                            @click.outside="show = false">
+                            <!-- Search Bar Icon -->
+                            <a href="javascript:;"
+                                class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                                @click="show = true" x-show="!show">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                    fill="none" class="svg img-fluid replaced-svg">
+                                    <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                                    <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                                </svg>
+                            </a>
+
+                            <!-- Submit Button -->
+                            <button type="submit" value="Submit"
+                                class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                                x-show="show" @click="show = false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                    fill="none" class="svg img-fluid replaced-svg">
+                                    <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                                    <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Search Input -->
+                            <input type="text" name="s" placeholder="Search..."
+                                :class="show ? 'md:w-[400px] w-[265px] opacity-100' : 'w-0 opacity-0'"
+                                class="rounded-full py-3 pr-3 pl-6 absolute md:right-[76px] right-[47px] top-0 lg:text-lg text-base text-kpgrey transition-all duration-300 bg-white lg:h-14 h-10"
+                                x-show="show">
+                        </form>
+
+                        <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0"
+                            type="button" x-on:click="open = !open">
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+                        </button>
+                    </div>
+                    <div class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+                        id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+                        <div
+                            class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+                            <div class="w-full">
+                                <ul class="w-full">
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="#">Culture + Careers</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./our-people.html">Our People</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./projects.html">Projects + Services</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./locations.html">Let’s Connect</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="#">What’s New</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a target="_blank"
+                                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                                Now</a>
+                        </div>
+                        <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;"
+                            x-on:click="open = false">
+                            <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+                        </a>
+                        <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+                            <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <g clip-path="url(#clip0_946_15438)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="mb-3 flex gap-4">
+                                <a class="text-[15px] text-black hover:underline"
+                                    href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                                <a class="text-[15px] text-black hover:underline"
+                                    href="https://www.kpff.com/eeo-policy">EEO
+                                    Policy</a>
+                            </div>
+                            <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting
+                                Engineers. All rights reserved.</span>
+                        </div>
+                    </div>
+                    <div class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+                        :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="w-full lg:h-[85vh] lg:min-h-[500px] overflow-hidden">
+        <div class="w-full lg:h-full flex flex-wrap lg:flex-row flex-col-reverse">
+          <div class="lg:w-1/2 w-full lg:min-h-[500px] lg:pt-28 pt-8 pb-12 xl:px-16 px-8 bg-kpgrey text-white flex items-center">
+            <div>
+                <h1 class="lg:text-4xl md:text-3xl text-2xl font-semibold lg:mb-6 mb-4">Our purpose is to engineer opportunities.</h1>
+                <div class="space-y-5">
+                    <p>Each day is our opportunity to solve problems, deliver excellence, help our communities, and enable the growth and creativity of our people, clients, and profession.</p>
+                </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2 w-full lg:min-h-[500px]">
+            <div class="w-full lg:h-full relative">
+                <img class="block w-full h-full object-cover lg:absolute top-0 right-0 bottom-0 left-0" src="images/Sacramento-Skyline-PVV-main2.jpg" alt="" />
+              </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="xl:p-16 xl:py-14 p-8">
+        <div class="w-full">
+            <h2 class="md:text-4xl text-3xl font-semibold mb-5">Our Vision</h2>
+            <p>Our people are in the driver’s seat. The ideas and aspirations of our people continually pilot our collective vision.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="w-full flex flex-wrap">
+            <div x-data="{ isOpen: false, videoSrc: '' }" class="w-full lg:w-1/2 relative">
+                <img src="images/PVV-excellence-thumbnail.jpg" alt="" class="w-full xl:max-h-[500px] lg:max-h-[400px] object-cover">
+                <button @click="isOpen = true; videoSrc = 'https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf'; document.body.style.overflow = 'hidden';" 
+                        class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                        <g>
+                            <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                            <polygon points="192,336 352,256 192,176  "/>
+                        </g>
+                    </svg>
+                </button>
+                <div 
+                    x-show="isOpen"
+                    @keydown.escape.window="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75">
+                    
+                    <div 
+                        class="relative w-[90%] max-w-5xl" 
+                        @click.outside="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''">
+                        <iframe 
+                            x-bind:src="videoSrc" 
+                            class="w-full aspect-video" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <button @click="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = '';" 
+                                class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕
+                        </button>
+                    </div>
+                </div>
+            </div>                       
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                <div>We strive to accomplish excellent work and we push each other to keep getting better. We are willing to fail forward. <strong>Excellence</strong> developed through determination and teamwork is the foundation of our work.</div>
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap bg-kpgrey text-white lg:flex-row-reverse">
+            <div x-data="{ isOpen: false, videoSrc: '' }" class="w-full lg:w-1/2 relative">
+                <img src="images/image-topimage.webp" alt="" class="w-full xl:max-h-[500px] lg:max-h-[400px] object-cover">
+                <button @click="isOpen = true; videoSrc = 'https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf'; document.body.style.overflow = 'hidden';" 
+                        class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                        <g>
+                            <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                            <polygon points="192,336 352,256 192,176  "/>
+                        </g>
+                    </svg>
+                </button>
+                <div 
+                    x-show="isOpen"
+                    @keydown.escape.window="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75">
+                    
+                    <div 
+                        class="relative w-[90%] max-w-5xl" 
+                        @click.outside="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''">
+                        <iframe 
+                            x-bind:src="videoSrc" 
+                            class="w-full aspect-video" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <button @click="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = '';" 
+                                class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                <div>We <strong>trust</strong> each other which allows us to be nimble in our markets. We strive to be trustworthy by assuming responsibility for what we do, being accountable and communicative.</div>
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap">
+            <div x-data="{ isOpen: false, videoSrc: '' }" class="w-full lg:w-1/2 relative">
+                <img src="images/PVV-Relationships-thumbnail-scaled.jpg" alt="" class="w-full xl:max-h-[500px] lg:max-h-[400px] object-cover">
+                <button @click="isOpen = true; videoSrc = 'https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf'; document.body.style.overflow = 'hidden';" 
+                        class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                        <g>
+                            <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                            <polygon points="192,336 352,256 192,176  "/>
+                        </g>
+                    </svg>
+                </button>
+                <div 
+                    x-show="isOpen"
+                    @keydown.escape.window="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75">
+                    
+                    <div 
+                        class="relative w-[90%] max-w-5xl" 
+                        @click.outside="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''">
+                        <iframe 
+                            x-bind:src="videoSrc" 
+                            class="w-full aspect-video" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <button @click="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = '';" 
+                                class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                <div>We put considerable emphasis on building and maintaining <strong>relationships</strong> both internally and externally. We spend the time and resources to meet in person and get to know each other. This emphasis on personal relationships also extends to our clients and others with whom we work.</div>
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap bg-kpgrey text-white lg:flex-row-reverse">
+            <div x-data="{ isOpen: false, videoSrc: '' }" class="w-full lg:w-1/2 relative">
+                <img src="images/PVV-Stability-zigzag.jpg" alt="" class="w-full xl:max-h-[500px] lg:max-h-[400px] object-cover">
+                <button @click="isOpen = true; videoSrc = 'https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf'; document.body.style.overflow = 'hidden';" 
+                        class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                        <g>
+                            <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                            <polygon points="192,336 352,256 192,176  "/>
+                        </g>
+                    </svg>
+                </button>
+                <div 
+                    x-show="isOpen"
+                    @keydown.escape.window="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75">
+                    
+                    <div 
+                        class="relative w-[90%] max-w-5xl" 
+                        @click.outside="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''">
+                        <iframe 
+                            x-bind:src="videoSrc" 
+                            class="w-full aspect-video" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <button @click="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = '';" 
+                                class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                <div>We do what we say we will do, and we are consistently professional in our work. We are fiscally conservative which allows each of us <strong>stability</strong> to practice our profession and serve our clients. Our goal is an enduring organization that perpetuates opportunities.</div>
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap">
+            <div x-data="{ isOpen: false, videoSrc: '' }" class="w-full lg:w-1/2 relative">
+                <img src="images/PVV-trust-thumbnail.jpg" alt="" class="w-full xl:max-h-[500px] lg:max-h-[400px] object-cover">
+                <button @click="isOpen = true; videoSrc = 'https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf'; document.body.style.overflow = 'hidden';" 
+                        class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                        <g>
+                            <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                            <polygon points="192,336 352,256 192,176  "/>
+                        </g>
+                    </svg>
+                </button>
+                <div 
+                    x-show="isOpen"
+                    @keydown.escape.window="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75">
+                    
+                    <div 
+                        class="relative w-[90%] max-w-5xl" 
+                        @click.outside="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = ''">
+                        <iframe 
+                            x-bind:src="videoSrc" 
+                            class="w-full aspect-video" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <button @click="isOpen = false; document.body.style.overflow = 'auto'; videoSrc = '';" 
+                                class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                <div>We have a contagious <strong>passion</strong> for our work and our company that comes through in our relationships, our interactions, and our work products. Those who maintain grit thrive in our environment.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-kpgrey text-white xl:p-16 xl:py-14 p-8">
+        <div class="w-full flex items-center lg:flex-nowrap flex-wrap lg:gap-20 gap-10">
+            <div class="flex flex-col">
+                <h3 class="md:text-3xl text-2xl font-bold mb-3">Interested in Joining our Team?</h3>
+                <p class="mb-5">We are constantly on the lookout for the best and brightest minds. Please explore our current opportunities and follow the prompts to apply online.</p>
+                <p>If you need assistance or have questions, email us at <a class="text-kp-light-blue hover:underline" href="mailto:careers@kpff.com">careers@kpff.com</a>.</p>
+            </div>
+            <a href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&cws=64" target="_blank" rel="noopener noreferrer" class="inline-block py-3 px-7 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300 whitespace-nowrap">Explore Positions</a>
+        </div>
+    </section>
+
+    <section class="bg-[#f2f3f4] xl:p-16 xl:py-5 p-8">
+        <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+          <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">Why Work For KPFF?</h3>
+          <ul class="services sm:columns-2 text-base w-full">
+            <li class="py-1">
+                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                    href="#"><span
+                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Forefront Education Program</a>
+            </li>
+            <li class="py-1">
+                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                    href="#"><span
+                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Differentiators
+                    </a>
+            </li>
+            <li class="py-1">
+                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                    href="#"><span
+                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Benefits</a>
+            </li>
+            <li class="py-1">
+                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                    href="#"><span
+                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Purpose, Vision + Values</a>
+            </li>
+          </ul>
+        </div>
+    </section>
+    
+    <section class="bg-kpgrey text-white xl:p-16 xl:py-5 p-8">
+        <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+          <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">What We’re Passionate About</h3>
+          <ul class="services sm:columns-2 text-base w-full">
+              <li class="py-1">
+                  <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                      href="#"><span
+                          class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Advancing
+                      our Professions</a>
+              </li>
+              <li class="py-1">
+                  <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                      href="#"><span
+                          class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Justice,
+                      Equity, Diversity + Inclusion</a>
+              </li>
+              <li class="py-1">
+                  <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                      href="#"><span
+                          class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Helping
+                      Our Communities</a>
+              </li>
+              <li class="py-1">
+                  <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                      href="#"><span
+                          class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Sustainability
+                      + Environmental Responsibility</a>
+              </li>
+          </ul>
+        </div>
+    </section>
+
+    <footer class="xl:px-16 px-8 xl:py-20 py-10">
+        <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#"
+                        class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+                <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html"
+                        class="text-inherit hover:text-kpblue">Leadership</a></h3>
+                <p>Get to know our team of Principals and Associates and learn more about their backgrounds and
+                    expertise.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#"
+                        class="text-inherit hover:text-kpblue">What’s New</a></h3>
+                <p>Check out some of our featured stories and news about our work</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html"
+                        class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+                <p>Discover more about our many teams and what makes them unique.
+                </p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html"
+                        class="text-inherit hover:text-kpblue">All Projects</a></h3>
+                <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <div class="header-foot text-sm text-kpgrey">
+                    <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                        href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <g clip-path="url(#clip0_946_15438)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                                    fill="currentColor"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="mb-3 flex gap-4">
+                        <a class="text-[15px] text-black hover:underline"
+                            href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                        <a class="text-[15px] text-black hover:underline"
+                            href="https://www.kpff.com/eeo-policy">EEO
+                            Policy</a>
+                    </div>
+                    <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers.
+                        <br>All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

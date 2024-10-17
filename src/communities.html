@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+  <header class="absolute left-0 right-0 z-[1030]">
+    <nav
+      class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+      <div class="w-full relative flex justify-between items-center flex-nowrap">
+        <div class="flex items-center brand-breadcrumb md:max-w-none max-w-52">
+          <div class="flex items-end">
+            <a class="max-w-[80px] mr-3" href="#">
+              <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45" alt="">
+            </a>
+            <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Helping our Communities</span>
+          </div>
+        </div>
+        <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+          <div
+            class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+            <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }" @click.outside="show = false">
+              <!-- Search Bar Icon -->
+              <a href="javascript:;"
+                class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                @click="show = true" x-show="!show">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  class="svg img-fluid replaced-svg">
+                  <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                  <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                </svg>
+              </a>
+
+              <!-- Submit Button -->
+              <button type="submit" value="Submit"
+                class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                x-show="show" @click="show = false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  class="svg img-fluid replaced-svg">
+                  <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                  <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                </svg>
+              </button>
+
+              <!-- Search Input -->
+              <input type="text" name="s" placeholder="Search..."
+                :class="show ? 'w-[400px] opacity-100' : 'w-0 opacity-0'"
+                class="rounded-full py-3 pr-3 pl-6 absolute right-[76px] top-0 text-lg text-kpgrey transition-all duration-300 bg-white h-14"
+                x-show="show">
+            </form>
+
+            <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0" type="button"
+              x-on:click="open = !open">
+              <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+              <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+              <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+            </button>
+          </div>
+          <div
+            class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+            id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+            <div class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+              <div class="w-full">
+                <ul class="w-full">
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">Culture + Careers</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./our-people.html">Our People</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./projects.html">Projects + Services</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./locations.html">Let’s Connect</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">What’s New</a>
+                  </li>
+                </ul>
+              </div>
+              <a target="_blank"
+                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                Now</a>
+            </div>
+            <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;"
+              x-on:click="open = false">
+              <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+            </a>
+            <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+              <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <g clip-path="url(#clip0_946_15438)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                      fill="currentColor"></path>
+                  </g>
+                </svg>
+              </a>
+              <div class="mb-3 flex gap-4">
+                <a class="text-[15px] text-black hover:underline"
+                  href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+                  Policy</a>
+              </div>
+              <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. All rights reserved.</span>
+            </div>
+          </div>
+          <div
+            class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+            :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <section class="w-full lg:h-[85vh] lg:min-h-[500px] overflow-hidden">
+    <div class="w-full lg:h-full flex flex-wrap lg:flex-row flex-col-reverse">
+      <div class="lg:w-1/2 w-full lg:min-h-[500px] lg:pt-28 pt-8 pb-12 xl:px-16 px-8 bg-kpgrey text-white flex items-center">
+        <div>
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-semibold lg:mb-6 mb-4">KPFF is committed to the communities in which we design and live.</h1>
+            <div class="space-y-5">
+                <p>Our employees have a passion for shaping both the physical and cultural environments they are a part of. KPFF encourages the donation of both time and talent through a variety of volunteer opportunities. We also contribute financially to organizations in need at both the local and national level.</p>
+            </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2 w-full lg:min-h-[500px]">
+        <div class="w-full lg:h-full relative">
+            <img class="block w-full h-full object-cover lg:absolute top-0 right-0 bottom-0 left-0" src="images/Helping-Our-Communities-primary-scaled.jpg" alt="" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="xl:p-16 p-8 bg-[#f2f3f4]">
+    <div class="w-full">
+      <div x-data="{
+        activeSlide: 1, 
+        slideCount: 4, 
+        intervalId: null,
+        modalOpen: false,
+        startProgress() {
+          clearInterval(this.intervalId);
+          if (!this.modalOpen) {
+            this.intervalId = setInterval(() => {
+              this.activeSlide = this.activeSlide < this.slideCount ? this.activeSlide + 1 : 1;
+            }, 5000);
+          }
+        },
+        openModal(video) {
+          this.videoSrc = video;
+          this.modalOpen = true;
+          this.stopAutoplay();
+          document.body.classList.add('overflow-hidden');
+        },
+        closeModal() {
+          this.modalOpen = false;
+          this.startProgress();
+          document.body.classList.remove('overflow-hidden');
+          this.resetVideo();
+        },
+        resetVideo() {
+          this.videoSrc = ''; // Clear the src to stop video playback
+          setTimeout(() => this.videoSrc = '', 100); // Reset after closing
+        },
+        stopAutoplay() {
+          clearInterval(this.intervalId);
+        },
+        handleEscape(event) {
+          if (event.key === 'Escape' && this.modalOpen) {
+            this.closeModal();
+          }
+        }
+      }" 
+      x-init="startProgress()" 
+      x-on:keydown.window="handleEscape" 
+      class="relative w-full">
+      
+        <!-- Slider -->
+        <div class="relative w-full 2xl:pt-[45%] xl:pt-[50%] xl:aspect-auto aspect-video">
+          <!-- Item 1 -->
+          <div
+            x-show="activeSlide === 1"
+            x-transition:enter="transition-opacity duration-500"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0">
+            <img class="block w-full h-full object-cover" src="images/slide-1.jpg" alt="" />
+            <button @click="openModal('https://www.youtube.com/embed/ScMzIvxBSi4?si=bylXGFBm8Oqudzyf')" class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                <g>
+                  <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                  <polygon points="192,336 352,256 192,176  "/>
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            x-show="activeSlide === 2"
+            x-transition:enter="transition-opacity duration-500"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0">
+            <img class="block w-full h-full object-cover" src="images/slide-2.jpg" alt="" />
+            <button @click="openModal('https://www.youtube.com/embed/u31qwQUeGuM?si=jynXQp14wOMeur3-')" class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                <g>
+                  <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                  <polygon points="192,336 352,256 192,176  "/>
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            x-show="activeSlide === 3"
+            x-transition:enter="transition-opacity duration-500"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0">
+            <img class="block w-full h-full object-cover" src="images/slide-3.jpg" alt="" />
+            <button @click="openModal('https://www.youtube.com/embed/MLpWrANjFbI?si=R6DctfKtCtA0VNPy')" class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                <g>
+                  <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                  <polygon points="192,336 352,256 192,176  "/>
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            x-show="activeSlide === 4"
+            x-transition:enter="transition-opacity duration-500"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0">
+            <img class="block w-full h-full object-cover" src="images/slide-4.jpg" alt="" />
+            <button @click="openModal('https://www.youtube.com/embed/eEzD-Y97ges?si=e-ZGfi_slbJBbrvB')" class="absolute lg:w-20 w-12 lg:h-20 h-12 top-0 right-0 bottom-0 left-0 m-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" version="1.1" id="Layer_1" class="w-full h-full" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                <g>
+                  <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472   c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                  <polygon points="192,336 352,256 192,176  "/>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>      
+
+        <!-- Dots Navigation -->
+        <div class="space-x-2 -ml-2 z-50 mt-5">
+          <template x-for="slideIndex in slideCount" :key="slideIndex">
+            <button 
+              @click="activeSlide = slideIndex; startProgress()" 
+              :class="{
+                'bg-[#4c8fbc]': activeSlide === slideIndex, 
+                'bg-[#9fd9ed]': activeSlide !== slideIndex
+              }" 
+              class="h-1.5 w-8 relative overflow-hidden">
+              <span 
+                class="absolute top-0 left-0 h-full bg-[#4c8fbc] transition-all"
+                :class="{
+                  'w-0': activeSlide !== slideIndex,
+                  'w-full': activeSlide === slideIndex && intervalId !== null
+                }"
+                :style="{
+                  'transition-duration': activeSlide === slideIndex && intervalId !== null ? '5000ms' : '0ms'
+                }">
+              </span>
+            </button>
+          </template>
+        </div>
+                
+        <!-- Modal -->
+        <div 
+          x-show="modalOpen" 
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 scale-90"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-300"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-90"
+          class="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-75" @click="closeModal">
+          <div class="relative w-[90%] max-w-5xl">
+            <iframe 
+              class="w-full aspect-video" 
+              :src="videoSrc" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+            <button @click="closeModal" class="absolute -top-10 lg:-right-10 -right-7 text-white text-xl p-2">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </section>
+
+  <section class="xl:p-16 p-8">
+    <h2 class="text-[26px] leading-tight font-bold mb-10">Our employees work with numerous organizations including:</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+      <div class="flex justify-center items-center">
+        <a href="https://www.ewb-usa.org/" title="" target="_blank">
+          <img src="images/image-org-logo1.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.ywca.org/" title="" target="_blank">
+          <img src="images/image-org-logo3.png" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.unitedway.org/" title="" target="_blank">
+          <img src="images/image-org-logo6.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.bdiweb.org/" title="" target="_blank">
+          <img src="images/BDI_2016_Web-Logo.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.af-oregon.org/" title="" target="_blank">
+          <img src="images/AFO-logotagline.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.heart.org/" title="" target="_blank">
+          <img src="images/image-org-logo9.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.bridgestoprosperity.org/" title="" target="_blank">
+          <img src="images/image-org-logo4.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.lung.org/" title="" target="_blank">
+          <img src="images/image-org-logo7.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://socalnoma.org/" title="" target="_blank">
+          <img src="images/noma-logo.jpeg" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.canstruction.org/" title="" target="_blank">
+          <img src="images/canstruction-white.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.acementor.org/" title="" target="_blank">
+          <img src="images/image-org-logo2.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://rebuildingtogether.org/" title="" target="_blank">
+          <img src="images/image-org-logo5.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.habitat.org/" title="" target="_blank">
+          <img src="images/image-org-logo8.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://boysandgirlshaven.org/" title="" target="_blank">
+          <img src="images/BGH-New-logo-with-Tag.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+      <div class="flex justify-center items-center">
+        <a href="https://www.wtsinternational.org/chapters/puget-sound-seattle" title="" target="_blank">
+          <img src="images/wts-puget-sound.webp" alt="" width="120" height="80">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-kpgrey text-white xl:p-16 xl:py-5 p-8">
+    <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+      <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">What We’re Passionate About</h3>
+      <ul class="services sm:columns-2 text-base w-full">
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Advancing
+                  our Professions</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Justice,
+                  Equity, Diversity + Inclusion</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Helping
+                  Our Communities</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Sustainability
+                  + Environmental Responsibility</a>
+          </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-[#f2f3f4] xl:p-16 xl:py-5 p-8">
+    <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+      <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">Why Work For KPFF?</h3>
+      <ul class="services sm:columns-2 text-base w-full">
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Forefront Education Program</a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Differentiators
+                </a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Benefits</a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Purpose, Vision + Values</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="xl:px-16 px-8 xl:py-20 py-10">
+    <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+        <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html" class="text-inherit hover:text-kpblue">Leadership</a></h3>
+        <p>Get to know our team of Principals and Associates and learn more about their backgrounds and expertise.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">What’s New</a></h3>
+        <p>Check out some of our featured stories and news about our work</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html" class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+        <p>Discover more about our many teams and what makes them unique.
+          </p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html" class="text-inherit hover:text-kpblue">All Projects</a></h3>
+        <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <div class="header-foot text-sm text-kpgrey">
+          <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+            href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <g clip-path="url(#clip0_946_15438)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </a>
+          <div class="mb-3 flex gap-4">
+            <a class="text-[15px] text-black hover:underline"
+              href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+            <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+              Policy</a>
+          </div>
+          <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. <br>All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

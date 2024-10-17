@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+    <header class="absolute left-0 right-0 z-[1030]">
+        <nav
+            class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+            <div class="w-full relative flex justify-between items-center flex-nowrap">
+                <div class="flex items-center brand-breadcrumb">
+                    <div class="flex items-end">
+                        <a class="max-w-[80px] mr-3" href="#">
+                            <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45"
+                                alt="">
+                        </a>
+                        <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Culture + Careers</span>
+                    </div>
+                </div>
+                <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+                    <div
+                        class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+                        <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }"
+                            @click.outside="show = false">
+                            <!-- Search Bar Icon -->
+                            <a href="javascript:;"
+                                class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                                @click="show = true" x-show="!show">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                    fill="none" class="svg img-fluid replaced-svg">
+                                    <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                                    <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                                </svg>
+                            </a>
+
+                            <!-- Submit Button -->
+                            <button type="submit" value="Submit"
+                                class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                                x-show="show" @click="show = false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                    fill="none" class="svg img-fluid replaced-svg">
+                                    <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                                    <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Search Input -->
+                            <input type="text" name="s" placeholder="Search..."
+                                :class="show ? 'md:w-[400px] w-[265px] opacity-100' : 'w-0 opacity-0'"
+                                class="rounded-full py-3 pr-3 pl-6 absolute md:right-[76px] right-[47px] top-0 lg:text-lg text-base text-kpgrey transition-all duration-300 bg-white lg:h-14 h-10"
+                                x-show="show">
+                        </form>
+
+                        <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0"
+                            type="button" x-on:click="open = !open">
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                            <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+                        </button>
+                    </div>
+                    <div class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+                        id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+                        <div
+                            class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+                            <div class="w-full">
+                                <ul class="w-full">
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="#">Culture + Careers</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./our-people.html">Our People</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./projects.html">Projects + Services</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="./locations.html">Let’s Connect</a>
+                                    </li>
+                                    <li class="menu_item md:mb-8 mb-5 w-full">
+                                        <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                                            href="#">What’s New</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a target="_blank"
+                                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                                Now</a>
+                        </div>
+                        <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;"
+                            x-on:click="open = false">
+                            <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+                        </a>
+                        <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+                            <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <g clip-path="url(#clip0_946_15438)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="mb-3 flex gap-4">
+                                <a class="text-[15px] text-black hover:underline"
+                                    href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                                <a class="text-[15px] text-black hover:underline"
+                                    href="https://www.kpff.com/eeo-policy">EEO
+                                    Policy</a>
+                            </div>
+                            <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting
+                                Engineers. All rights reserved.</span>
+                        </div>
+                    </div>
+                    <div class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+                        :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="w-full lg:h-[85vh] min-h-[700px]">
+        <div class="w-full h-full flex flex-wrap">
+            <div class="lg:w-3/5 w-full h-full">
+                <div
+                    class="w-full h-full relative cnc_overlay overflow-hidden before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-30 before:transition-all before:duration-300 lg:py-24 pt-32 pb-20 xl:px-16 px-8 flex items-center">
+                    <img class="block w-full h-full object-cover object-top absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                        src="images/image-culturehero-1.jpg" alt="" />
+                    <div class="relative z-50 text-white">
+                        <div x-data="carousel()" x-init="startCarousel()" class="relative w-full xl:h-28 lg:h-20 h-14">
+                            <span x-show="current === 0"
+                                class="absolute w-full h-full flex items-center xl:text-[90px] lg:text-[60px] text-5xl font-bold text-kp-light-blue leading-tighttight tracking-[-2px] transition-opacity duration-1000"
+                                :class="current === 0 ? 'opacity-100' : 'opacity-0'" x-transition:enter="opacity-0" x-transition:enter-end="opacity-100">Excellence</span>
+                            <span x-show="current === 1"
+                                class="absolute w-full h-full flex items-center xl:text-[90px] lg:text-[60px] text-5xl font-bold text-kp-light-blue leading-tight tracking-[-2px] transition-opacity duration-1000 opacity-0"
+                                x-transition:enter="opacity-0" x-transition:enter-end="opacity-100">Trust</span>
+                            <span x-show="current === 2"
+                                class="absolute w-full h-full flex items-center xl:text-[90px] lg:text-[60px] text-5xl font-bold text-kp-light-blue leading-tight tracking-[-2px] transition-opacity duration-1000 opacity-0"
+                                x-transition:enter="opacity-0" x-transition:enter-end="opacity-100">Relationships</span>
+                            <span x-show="current === 3"
+                                class="absolute w-full h-full flex items-center xl:text-[90px] lg:text-[60px] text-5xl font-bold text-kp-light-blue leading-tight tracking-[-2px] transition-opacity duration-1000 opacity-0"
+                                x-transition:enter="opacity-0" x-transition:enter-end="opacity-100">Stability</span>
+                            <span x-show="current === 4"
+                                class="absolute w-full h-full flex items-center xl:text-[90px] lg:text-[60px] text-5xl font-bold text-kp-light-blue leading-tight tracking-[-2px] transition-opacity duration-1000 opacity-0"
+                                x-transition:enter="opacity-0" x-transition:enter-end="opacity-100">Passion</span>
+                        </div>
+                        <script>
+                            function carousel() {
+                                return {
+                                    current: 0,
+                                    totalItems: 5,
+                                    startCarousel() {
+                                        setInterval(() => {
+                                            this.current = (this.current + 1) % this.totalItems;
+                                        }, 2000);
+                                    }
+                                }
+                            }
+                        </script>
+                        <h1 class="xl:text-6xl lg:text-[40px] leading-tight text-3xl font-semibold tracking-[-2px] mb-9">is at the heart of<br>our culture</h1>
+                        <a target="_blank"
+                            href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64"
+                            class="inline-block py-3.5 px-6 border-2 border-white hover:opacity-60"><span></span>Explore
+                            Positions</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="lg:w-2/5 w-full lg:py-24 py-10 xl:px-16 px-8 bg-kpgrey text-white flex items-center h-full">
+                <div>
+                    <div class="w-full mb-16">
+                        <h2 class="text-[22px] font-semibold text-[#a4abb6] mb-5">What We’re Passionate About</h2>
+                        <ul class="services text-base">
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Advancing
+                                    our Professions</a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Justice,
+                                    Equity, Diversity + Inclusion</a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Helping
+                                    Our Communities</a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Sustainability
+                                    + Environmental Responsibility</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h2 class="text-[22px] font-semibold text-[#a4abb6] mb-5">Why Work for KPFF?</h2>
+                        <ul class="services text-base">
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Forefront Education Program</a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Differentiators
+                                    </a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Benefits</a>
+                            </li>
+                            <li class="mb-4">
+                                <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                                    href="#"><span
+                                        class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Purpose, Vision + Values</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#495362] text-white xl:p-16 xl:py-14 p-8">
+        <div class="w-full">
+            <h2 class="md:text-4xl text-3xl font-semibold mb-5">Our team doesn't just work.</h2>
+            <p>We challenge one another, we dream, we make a difference, and we have fun.<br><br>Our perpetuation is reliant on the individuals who speak up, who engage and who lead holistically.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="w-full flex flex-wrap">
+            <div class="w-full lg:w-1/2">
+                <img src="images/Careers-Primary-Exploration-Park-Site-Visit-crop.jpg" alt="" class="w-full xl:max-h-[400px] lg:max-h-[300px] object-cover">
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                Joining our team means you'll partner with smart people on cool projects that make an impact in the community and shape our cities. We provide ample opportunity for growth and provide mentorship and professional development.
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap bg-kpgrey text-white lg:flex-row-reverse">
+            <div class="w-full lg:w-1/2">
+                <img src="images/andi-careers-1000x800-1.jpg" alt="" class="w-full xl:max-h-[400px] lg:max-h-[300px] object-cover object-top">
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                We balance freedom and support, allowing our team of entrepreneurs to thrive. We leverage our size to provide robust resources and support without being constrained by bureaucracy.
+            </div>
+        </div>
+        <div class="w-full flex flex-wrap">
+            <div class="w-full lg:w-1/2">
+                <img src="images/Careers-MW-KLH_0138-crop.jpg" alt="" class="w-full xl:max-h-[400px] lg:max-h-[300px] object-cover object-top">
+            </div>
+            <div class="w-full lg:w-1/2 xl:py-24 lg:py-16 lg:px-14 p-8 flex items-center">
+                KPFF is an Equal Employment Opportunity/Affirmative Action Employer committed to hiring a diverse workforce and maintaining an inclusive culture. KPFF participates in the e-Verify program to determine the eligibility of our employees to work in the United States.
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-kpgrey text-white xl:p-16 xl:py-14 p-8">
+        <div class="w-full flex items-center lg:flex-nowrap flex-wrap lg:gap-20 gap-10">
+            <div class="flex flex-col">
+                <h3 class="md:text-3xl text-2xl font-bold mb-3">Interested in Joining our Team?</h3>
+                <p class="mb-5">We are constantly on the lookout for the best and brightest minds. Please explore our current opportunities and follow the prompts to apply online.</p>
+                <p>If you need assistance or have questions, email us at <a class="text-kp-light-blue hover:underline" href="mailto:careers@kpff.com">careers@kpff.com</a>.</p>
+            </div>
+            <a href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&cws=64" target="_blank" rel="noopener noreferrer" class="inline-block py-3 px-7 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300 whitespace-nowrap">Explore Positions</a>
+        </div>
+    </section>
+
+    <footer class="xl:px-16 px-8 xl:py-20 py-10">
+        <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#"
+                        class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+                <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html"
+                        class="text-inherit hover:text-kpblue">Leadership</a></h3>
+                <p>Get to know our team of Principals and Associates and learn more about their backgrounds and
+                    expertise.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#"
+                        class="text-inherit hover:text-kpblue">What’s New</a></h3>
+                <p>Check out some of our featured stories and news about our work</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html"
+                        class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+                <p>Discover more about our many teams and what makes them unique.
+                </p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html"
+                        class="text-inherit hover:text-kpblue">All Projects</a></h3>
+                <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+            </div>
+            <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+                <div class="header-foot text-sm text-kpgrey">
+                    <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                        href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <g clip-path="url(#clip0_946_15438)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                                    fill="currentColor"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="mb-3 flex gap-4">
+                        <a class="text-[15px] text-black hover:underline"
+                            href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                        <a class="text-[15px] text-black hover:underline"
+                            href="https://www.kpff.com/eeo-policy">EEO
+                            Policy</a>
+                    </div>
+                    <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers.
+                        <br>All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1198 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+  <div class="bg-kpgrey w-full h-screen fixed -z-10"></div>
+  <header class="absolute left-0 right-0 z-[1030]">
+    <nav class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+      <div class="w-full relative flex justify-between items-center flex-nowrap">
+        <div class="flex items-center brand-breadcrumb">
+          <div class="flex items-end">
+            <a class="max-w-[80px] mr-3" href="./projects.html">
+              <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45" alt="">
+            </a>
+            <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1 uppercase">Projects + Services</span>
+          </div>
+        </div>
+        <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+          <div class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+            <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }" @click.outside="show = false">
+                <!-- Search Bar Icon -->
+                <a href="javascript:;" 
+                   class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                   @click="show = true" 
+                   x-show="!show">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </a>
+        
+                <!-- Submit Button -->
+                <button type="submit" value="Submit" 
+                        class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                        x-show="show" 
+                        @click="show = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </button>
+        
+                <!-- Search Input -->
+                <input type="text" name="s" placeholder="Search..." 
+                       :class="show ? 'w-[400px] opacity-100' : 'w-0 opacity-0'" 
+                       class="rounded-full py-3 pr-3 pl-6 absolute right-[76px] top-0 text-lg text-kpgrey transition-all duration-300 bg-white h-14"
+                       x-show="show">
+            </form>
+        
+            <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0" type="button" x-on:click="open = !open">
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+            </button>
+          </div>
+          <div
+            class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+            id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+            <div class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+              <div class="w-full">
+                <ul class="w-full">
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">Culture + Careers</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./our-people.html">Our People</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./projects.html">Projects + Services</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./locations.html">Let’s Connect</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-[22px] before:h-3.5 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">What’s New</a>
+                  </li>
+                </ul>
+              </div>
+              <a target="_blank"
+                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                Now</a>
+            </div>
+            <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;" x-on:click="open = false">
+              <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+            </a>
+            <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+              <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <g clip-path="url(#clip0_946_15438)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                      fill="currentColor"></path>
+                  </g>
+                </svg>
+              </a>
+              <div class="mb-3 flex gap-4">
+                <a class="text-[15px] text-black hover:underline"
+                  href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+                  Policy</a>
+              </div>
+              <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. All rights reserved.</span>
+            </div>
+          </div>
+          <div
+            class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+            :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="bg-white fadeInUp">
+  <div class="w-full lg:h-[85vh] min-h-[500px] bg-[#231f20] text-white flex flex-wrap lg:flex-row flex-col-reverse">
+    <div class="2xl:w-1/4 lg:w-1/3 w-full flex flex-nowrap items-center lg:pt-[100px] xl:px-16 px-8 xl:pb-24 py-10">
+      <div class="hero-content">
+        <h1 class="lg:mb-10 mb-5 3xl:text-6xl xl:text-5xl md:text-4xl text-3xl font-semibold">Projects + Services</h1>
+        <p class="mb-6 text-lg">KPFF provides consistent, creative and thoughtful design solutions for even the most
+          challenging projects.</p>
+      </div>
+    </div>
+    <div class="2xl:w-3/4 lg:w-2/3 w-full">
+      <div class="w-full h-[85vh] min-h-[500px] flex items-stretch justify-center">
+        <div class="w-full h-full">
+          <div x-data="{
+                activeSlide: 1, 
+                slideCount: 5, 
+                intervalId: null,
+                startProgress() {
+                  clearInterval(this.intervalId);
+                  this.intervalId = setInterval(() => {
+                    this.activeSlide = this.activeSlide < this.slideCount ? this.activeSlide + 1 : 1;
+                  }, 5000);
+                }
+              }" x-init="startProgress()" class="relative w-full h-full">
+            <!-- Slider -->
+            <div class="relative h-full">
+              <!-- Item 1 -->
+              <div
+                x-show="activeSlide === 1"
+                x-transition:enter="transition-opacity duration-500"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 overlay before:opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+                <img class="block w-full h-full object-cover absolute" src="images/slide-1.jpg" alt="" />
+                <a class="text-white slide_link relative w-full h-full z-40 flex" href="./project-detail.html">
+                  <div class="absolute xl:left-20 xl:bottom-20 xl:right-20 md:left-10 left-8 bottom-24 md:right-10 right-8 xl:max-w-[600px]">
+                    <h2 :class="{'caption': activeSlide === 1}" class="whitespace-normal mb-4 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold transition-all duration-300">
+                      Cooley Landing Education Center
+                    </h2>
+                    <span class="w-6 h-6 flex transition-all duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 7 12 9.99" fill="currentColor"
+                        class="w-full h-full">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 12l-3.293-3.293a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L9.586 12 6.293 8.707a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <!-- Item 2 -->
+              <div
+                x-show="activeSlide === 2"
+                x-transition:enter="transition-opacity duration-500"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 overlay before:opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+                <img class="block w-full h-full object-cover absolute" src="images/slide-2.jpg" alt="" />
+                <a class="text-white slide_link relative w-full h-full z-40 flex" href="./project-detail.html">
+                  <div class="absolute xl:left-20 xl:bottom-20 xl:right-20 md:left-10 left-8 bottom-24 md:right-10 right-8 xl:max-w-[600px]">
+                    <h2 :class="{'caption': activeSlide === 2}" class="whitespace-normal mb-4 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold transition-all duration-300">
+                      “The Legacy” Event Center at<br>Log Still Distillery
+                    </h2>
+                    <span class="w-6 h-6 flex transition-all duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 7 12 9.99" fill="currentColor"
+                        class="w-full h-full">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 12l-3.293-3.293a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L9.586 12 6.293 8.707a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <!-- Item 3 -->
+              <div
+                x-show="activeSlide === 3"
+                x-transition:enter="transition-opacity duration-500"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 overlay before:opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+                <img class="block w-full h-full object-cover absolute" src="images/slide-3.jpg" alt="" />
+                <a class="text-white slide_link relative w-full h-full z-40 flex" href="./project-detail.html">
+                  <div class="absolute xl:left-20 xl:bottom-20 xl:right-20 md:left-10 left-8 bottom-24 md:right-10 right-8 xl:max-w-[600px]">
+                    <h2 :class="{'caption': activeSlide === 3}" class="whitespace-normal mb-4 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold transition-all duration-300">
+                      Bill and Melinda Gates Foundation Campus
+                    </h2>
+                    <span class="w-6 h-6 flex transition-all duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 7 12 9.99" fill="currentColor"
+                        class="w-full h-full">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 12l-3.293-3.293a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L9.586 12 6.293 8.707a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <!-- Item 4 -->
+              <div
+                x-show="activeSlide === 4"
+                x-transition:enter="transition-opacity duration-500"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 overlay before:opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+                <img class="block w-full h-full object-cover absolute" src="images/slide-4.jpg" alt="" />
+                <a class="text-white slide_link relative w-full h-full z-40 flex" href="./project-detail.html">
+                  <div class="absolute xl:left-20 xl:bottom-20 xl:right-20 md:left-10 left-8 bottom-24 md:right-10 right-8 xl:max-w-[600px]">
+                    <h2 :class="{'caption': activeSlide === 4}" class="whitespace-normal mb-4 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold transition-all duration-300">
+                      The Broad
+                    </h2>
+                    <span class="w-6 h-6 flex transition-all duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 7 12 9.99" fill="currentColor"
+                        class="w-full h-full">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 12l-3.293-3.293a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L9.586 12 6.293 8.707a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <!-- Item 5 -->
+              <div
+                x-show="activeSlide === 5"
+                x-transition:enter="transition-opacity duration-500"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 overlay before:opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+                <img class="block w-full h-full object-cover absolute" src="images/slide-5.jpg" alt="" />
+                <a class="text-white slide_link relative w-full h-full z-40 flex" href="./project-detail.html">
+                  <div class="absolute xl:left-20 xl:bottom-20 xl:right-20 md:left-10 left-8 bottom-24 md:right-10 right-8 xl:max-w-[600px]">
+                    <h2 :class="{'caption': activeSlide === 5}" class="whitespace-normal mb-4 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold transition-all duration-300">
+                      University of Iowa Campus Recreation & Wellness Center
+                    </h2>
+                    <span class="w-6 h-6 flex transition-all duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 7 12 9.99" fill="currentColor"
+                        class="w-full h-full">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 12l-3.293-3.293a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L9.586 12 6.293 8.707a1 1 0 0 1 0-1.414Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+        
+            <!-- Dots Navigation -->
+            <div class="absolute xl:bottom-20 xl:right-20 bottom-8 right-10 space-x-2 z-50">
+              <template x-for="slideIndex in slideCount" :key="slideIndex">
+                <button 
+                  @click="activeSlide = slideIndex; startProgress()" 
+                  class="h-1 w-8 relative overflow-hidden bg-white/50">
+                  <span 
+                    class="absolute top-0 left-0 h-full bg-white transition-all"
+                    :class="{
+                      'w-0': activeSlide !== slideIndex,
+                      'w-full': activeSlide === slideIndex && intervalId !== null
+                    }"
+                    :style="{
+                      'transition-duration': activeSlide === slideIndex && intervalId !== null ? '5000ms' : '0ms'
+                    }">
+                  </span>
+                </button>
+              </template>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-[#f4f6f6]">
+    <div class="w-full flex flex-wrap items-start">
+      <div class="2xl:w-1/4 lg:w-1/3 w-full lg:sticky top-0 py-8 xl:px-16 px-8 xl:pb-20 md:pb-16 pb-8">
+        <h2 class="text-2xl mb-2 font-semibold">Projects</h2>
+        <form action="">
+          <div class="mb-9 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 absolute left-2 top-3 text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input type="search" name="" placeholder="Search..." id=""
+              class="w-full h-12 py-3 pl-10 pr-3 border border-gray-400 border-b-2 outline-none appearance-none rounded-none bg-transparent text-gray-400">
+          </div>
+          <label for="" class="text-xl font-semibold mb-2 block">Filter By:</label>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 border border-gray-400 border-b-2 outline-none appearance-none bg-transparent text-gray-400">
+              <option class="bg-white text-black">Market</option>
+              <option class="bg-white text-black">Market</option>
+              <option class="bg-white text-black">Market</option>
+            </select>
+          </div>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 border border-gray-400 border-b-2 outline-none appearance-none bg-transparent text-gray-400">
+              <option class="bg-white text-black">Services</option>
+              <option class="bg-white text-black">Services</option>
+              <option class="bg-white text-black">Services</option>
+            </select>
+          </div>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 border border-gray-400 border-b-2 outline-none appearance-none bg-transparent text-gray-400">
+              <option class="bg-white text-black">Regions</option>
+              <option class="bg-white text-black">Regions</option>
+              <option class="bg-white text-black">Regions</option>
+            </select>
+          </div>                    
+          <button type="submit" class="py-2 px-7 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+          href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Filter</button>
+        </form>
+      </div>
+      <div class="2xl:w-3/4 lg:w-2/3 w-full">
+        <div class="flex flex-wrap">
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 4xl:pt-[25%] xl:pt-[33.33%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+            <img
+              class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+              src="images/slide-1.jpg" alt="" />
+            <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0"
+              href="./project-detail.html">
+              <div class="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 2xl:right-10 right-5">
+                <h4 class="mb-2 2xl:text-2xl text-xl font-semibold transition-all duration-300">
+                  Edith Green-Wendell Wyatt Federal Building Modernization
+                </h4>
+                <span>Costa Mesa, California</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="load-more"
+      class="flex justify-center items-center gap-5 bg-kpgrey text-white xl:text-4xl text-3xl font-semibold xl:py-6 p-5 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor"
+        class="size-7 text-kp-light-blue relative top-px">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+      Load More
+    </div>
+  </section>
+
+  <section>
+    <div class="full flex flex-wrap items-center">
+      <div class="2xl:w-1/4 lg:w-1/3 w-full py-8 xl:px-16 px-8">
+        <h2 class="text-4xl font-semibold capitalize">Services</h2>
+      </div>
+      <div class="2xl:w-3/4 lg:w-2/3 w-full lg:pt-14 pt-0 p-8">
+        <div x-data="modal()">
+          <ul class="services sm:columns-2">
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Bridge Engineering</h4>
+        <p>KPFF has been synonymous with excellence in bridge engineering for more than half a century. In communities throughout the country, KPFF-designed bridges provide important connections that allow millions of people to get where they’re going each day—whether they’re commuting to work, melding with a crowd on their way to a sporting event or transit center even taking a leisurely bike ride along a local trail.</p>
+        <p>KPFF’s award-winning project portfolio encompasses some truly one-of-a-kind vehicular and pedestrian bridges. Whether designing a new bridge or rehabilitating an existing one, KPFF engineers deliver innovation, safety, convenience, functionality and pleasing aesthetics in all of their work. Many of our projects have become signature bridges for their communities, capturing the distinctive history, culture and personality.</p>
+        <p>KPFF’s design experience extends to virtually every style and type of bridge, including cable-stayed, steel-truss, box girder, precast concrete, movable and suspension. We’ve designed everything from simple stream crossings to complex grade separations to the longest floating bridge in the world. In addition to comprehensive design and construction services, KPFF’s full scope of services includes load ratings, bridge inspections, seismic retrofits and repair projects.</p>
+        <p>Bridge Engineering services include but are not limited to:</p>
+        <ul>
+        <li>Bridge Rehabilitation</li>
+        <li>Inspections</li>
+        <li>Pedestrian Bridges</li>
+        <li>Vehicular Bridges</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Bridge Engineering</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Civil Engineering</h4>
+        <p>Resourceful, responsible and pro-active, our Civil Engineering team works hard to make our clients’ projects a success. We understand the complexity and schedule requirements associated with entitlements, permits, and project closeout processes; and we fully appreciate the design challenges associated with the implementation of storm water management systems. We are leaders in the use of 3D modeling as a tool for design, communication, construction coordination, and facilities management.</p>
+        <p>Civil Engineering services include but are not limited to:</p>
+        <ul>
+        <li>Fish Passage</li>
+        <li>Green Streets</li>
+        <li>Land Use and Master Planning</li>
+        <li>Low Impact Development</li>
+        <li>Natural Resources</li>
+        <li>Parking Design</li>
+        <li>Site Development</li>
+        <li>Site Entitlement</li>
+        <li>Stormwater Management</li>
+        <li>Utility Infrastructure</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Civil Engineering</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Civil 3D Modeling CGI Services</h4>
+        <p>KPFF’s Civil 3D Modeling CGI developers utilize 3D design files to create virtual environments for both technical and non-technical applications. The 3D model can provide refined details and show the final look of a project site as well as aid in understanding impacts on the surrounding environment. For non-technical audiences CGI can be used as a tool to educate and inform.</p>
+        <p>Civil 3D Modeling CGI can be implemented at any phase of a project for a multitude of uses, which include but are not limited to:</p>
+        <ul>
+        <li>Interactive visualizations</li>
+        <li>CGI 3D illustrations</li>
+        <li>CGI 3D animations</li>
+        <li>CGI blended renders</li>
+        <li>VR models for exploration</li>
+        <li>Mixed video footage</li>
+        <li>Clash detection</li>
+        <li>Underground utility visualization</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Civil 3D Modeling CGI Services</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p>&nbsp;</p>
+        <h4>Construction Project Management</h4>
+        <p>KPFF recognizes that there are specialized issues associated with development and construction of some projects that require professional Construction Project Management services. KPFF Construction Project Management staff provides Owner’s Representation services to public and private sector owners including: constructability reviews, cost estimating, bid support, field inspections/quality assurance, special testing and inspection, document control, permit coordination, onsite construction support and construction contract administration. It is imperative to KPFF that each project phase is aligned with our client’s expectations in terms of quality, progress, cost, and responsiveness of consultant staff. We address these concerns through a combination of focused dedication to successful project delivery techniques employed by professional construction managers and other highly qualified technical staff who are all encouraged to think and act innovatively.</p>
+        <p>The Construction Project Management Team is often supplemented by technical sub-consultant specialists including:</p>
+        <ul>
+        <li>Building Envelope Specialists</li>
+        <li>Cost Estimating, Scheduling and Contract Document Control</li>
+        <li>Geotechnical Testing and Compaction</li>
+        <li>Site Inspection &amp; Quality Assurance</li>
+        <li>Special Testing &amp; Materials Testing Services</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Construction/Project Management</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p><strong>Environmental Services</strong></p>
+        <p>KPFF’s Environmental Services team successfully provides environmental permitting and documentation for a wide range of projects including transportation, bridge, fish-passage culvert, marina, port, airport, infrastructure, water resource, park, and restoration projects. We work closely with engineers and clients to successfully apply for environmental permits to bring your project to construction.</p>
+        <p>KPFF’s Environmental Services include but are not limited to:</p>
+        <ul>
+        <li>Federal, state, and local environmental permitting and documentation:
+        <ul>
+        <li>NEPA</li>
+        <li>Endangered Species Act documentation (Biological Assessments, No Effect Letters, and coverage under Programmatic Biological Opinions)</li>
+        <li>Sole Source Aquifer Checklist</li>
+        <li>Clean Water Act Section 10 and 404 Permitting</li>
+        <li>Clean Water Act Section 401 Water Quality Certification</li>
+        <li>Joint Permit Application (JPA)</li>
+        <li>Joint Aquatic Resources Permit Application (JARPA)</li>
+        <li>Oregon Department of State Lands Removal/Fill Permitting</li>
+        <li>WDFW Hydraulic Project Approval (HPA)</li>
+        <li>SEPA Checklist</li>
+        <li>Critical Areas Assessment</li>
+        <li>Wetland and Habitat Permitting</li>
+        <li>Floodplain Permitting</li>
+        <li>Fish Passage</li>
+        </ul>
+        </li>
+        <li>Environmental Compliance During Construction
+        <ul>
+        <li>Migratory Bird Treaty Act (MBTA) coordination</li>
+        <li>Endangered Species</li>
+        <li>Wetlands and Streams</li>
+        <li>Water Quality</li>
+        <li>Hazardous Materials</li>
+        <li>Work Area Isolation</li>
+        </ul>
+        </li>
+        <li>Environmental Studies
+        <ul>
+        <li>Geomorphic Studies</li>
+        <li>Watershed Assessment</li>
+        <li>Stream Hydrology</li>
+        </ul>
+        </li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Environmental Permitting</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Fish Passage/Water Resources</h4>
+        <p>Our team is well-versed in fish passage, transportation, and restoration work where it is important to understand how the work from each discipline affects the project. Our coordinated approach assesses the site and evaluates structure replacement options, considering potential habitat improvements, constructibility and construction staging, maintenance, and other vital tasks that enable us to provide viable, cost-effective solutions.</p>
+        <p>Services include:</p>
+        <ul>
+        <li>Prime Project Management</li>
+        <li>Boundary Topographic Survey &amp; ROW Determination</li>
+        <li>Civil &amp; Structural Engineering</li>
+        <li>Hydrologic Analysis</li>
+        <li>Hydraulic Analysis</li>
+        <li>Alternatives Analysis</li>
+        <li>Fish Passage Culvert Design</li>
+        <li>Stream Habitat &amp; Restoration</li>
+        <li>Large Woody Material Design</li>
+        <li>Scour Analysis &amp; Scout Countermeasure Design</li>
+        <li>Stream Bed Design</li>
+        <li>FEMA No-Rise Analysis</li>
+        <li>Planting &amp; Site Restoration Plans</li>
+        <li>Erosion Control &amp; Drainage Plans</li>
+        <li>Transportation Engineering</li>
+        <li>Grant Application Support</li>
+        <li>Floodplain &amp; Wetland Delineation/Rating</li>
+        <li>Environmental Permitting (NEPA, SEPA, HPA, 401, 404, SMA, ESA, NPDES, EFH)</li>
+        <li>Complete Bid Documents</li>
+        <li>Construction Support Services</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Fish
+                Passage/Water Resources</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p>&nbsp;</p>
+        <h4>Land Surveying</h4>
+        <p>No single method works for every situation. KPFF land surveyors regard surveying as a piece of the puzzle within the scope of a larger project. We take a personal, tailored approach to our work, meeting individually with clients to pinpoint the type of information they need at each stage of a project. KPFF’s comprehensive surveying services include consulting, research, field reconnaissance, field measurements and calculations, error analysis and mapping. Our survey team provides responsive service throughout the US and around the globe for virtually every project type.</p>
+        <p>Land surveying services include but are not limited to:</p>
+        <ul>
+        <li>3D Laser Scanning</li>
+        <li>ALTA/NSPS Land Title</li>
+        <li>Aerial Imaging</li>
+        <li>Boundary</li>
+        <li>Construction Staking</li>
+        <li>Platting</li>
+        <li>Topographic</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Land
+                Surveying</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p>&nbsp;</p>
+        <h4>Marine Transit Planning</h4>
+        <p>The comprehensive consulting services KPFF provides to the ferry industry includes system, route, and terminal planning, security and operational assessments, disaster preparation, terminal design, vessel procurement, and asset management. We have worked with most of the major ferry operators in North America, including Washington State Ferries, the Staten Island Ferry, San Francisco Bay Ferries, and the British Columbia Ferry Service, as well as local agencies considering new or expanded ferry services across the country.</p>
+        <p>Marine Transit Planning services include but are not limited to:</p>
+        <ul>
+        <li>Emergency &amp; Disaster Response Planning</li>
+        <li>Ferry System Planning</li>
+        <li>Grant Support</li>
+        <li>Operations Consulting</li>
+        <li>Permitting Support</li>
+        <li>Safety and Security Reviews</li>
+        <li>Terminal Design &amp; Engineering</li>
+        <li>Terminal Siting Studies &amp; Planning</li>
+        <li>Vessel Procurement</li>
+        </ul>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Marine
+                Transit Planning</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Mechanical Engineering/Moveable Structures</h4>
+        <p>KPFF’s machinery design group has broad experience with unusual and one-of-a-kind custom machinery solutions. This insight provides a resource for owners, architects, engineers, and contractors who find they need something out of the ordinary. Services provided include concept development, detailed design, finite element analysis, detailed production drawings, fabrication and construction support, commissioning, and acceptance testing. Our client base spans virtually every industry, with special emphasis in cranes, hoists and rigging, materials handling systems, heavy movable structures, movable bridges, architectural machinery, construction equipment, and specialized manufacturing systems. We can produce custom designs for competitive bidding that result in cost effective, tailored solutions.</p>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Mechanical
+                Engineering/Moveable Structures</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4>Prime Consulting</h4>
+        <p>Our focus is to deliver a successful project in whatever role we’re in. When in a prime role we put an emphasis on building respect and establishing expectations in order to create clarity with all team members. We invest in educating about risk management – to encourage transparency, honesty and authenticity around potential challenges. We conduct prime consulting services on a variety of projects of different scales and complexities.</p>
+        "><span class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Prime
+                Consulting</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p>&nbsp;</p>
+            <h4>Protective Design</h4>
+            <p>Our mission is to protect life, property and operations by developing protective design measures that reduce risk exposure and vulnerabilities while enhancing resiliency. We work closely with the design team, owner, and stakeholders to understand their security needs and make informed, risk-based design decisions for their facilities. We integrate conventional and protective design, for both natural and man-made hazards, into a thoughtful and coordinated system that spans across all disciplines.</p>
+            <p>Protective Design Services include but are not limited to:</p>
+            <ul>
+            <li>Anti-terrorism</li>
+            <li>Ballistic &amp; Forced Entry Hardening</li>
+            <li>Blast Engineering</li>
+            <li>Explosive Safety</li>
+            <li>Hostile Vehicle Mitigation</li>
+            <li>Perimeter Security</li>
+            <li>Physical Security</li>
+            <li>Progressive Collapse</li>
+            </ul>
+            "><span
+                  class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Protective
+                Design</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<h4></h4>
+            <h4>Structural Engineering</h4>
+            <p>KPFF has been providing structural engineering solutions since 1960. We have partnered with clients on projects of all types and sizes. From historic renovations to stadiums, from custom residences to high-rise towers, and from design-build to prime consulting we are inspired to apply our experience and creativity on every project.</p>
+            <p>Structural Engineering services include but are not limited to:</p>
+            <ul>
+            <li>Adaptive Design</li>
+            <li>Bridge Design</li>
+            <li>Building Design</li>
+            <li>Curtainwall Design</li>
+            <li>Forensics</li>
+            <li>Historic Rehabilitation</li>
+            <li>Modular Construction</li>
+            <li>Renovation</li>
+            <li>Seismic Design</li>
+            <li>Shoring Design</li>
+            <li>Structural Evaluation</li>
+            <li>Structural Glass</li>
+            <li>Vibration Analysis and Measurement</li>
+            </ul>
+            "><span
+                  class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Structural
+                Engineering</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content=""><span
+                  class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Transportation
+                Engineering</a>
+            </li>
+            <li class="mb-4">
+              <a @click="openModal($event)"
+                class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="javascript:;" data-content="<p>&nbsp;</p>
+            <h4>Waterfront Engineering</h4>
+            <p>Working waterfront infrastructure must be designed to withstand significant loads, difficult environmental forces, demanding operational conditions, and meet a complicated array of code and permit conditions. KPFF faces each new project as an opportunity to derive and implement solutions which achieve our clients’ goals. We love the challenges of Port and Waterfront work and it shows in our commitment and ownership of issues to ensure project success.</p>
+            <p>Waterfront Engineering services include but are not limited to:</p>
+            <ul>
+            <li>Cargo Terminals</li>
+            <li>Ferry Terminals</li>
+            <li>Floating Structures</li>
+            <li>Marinas &amp; Boat Ramps</li>
+            <li>Piers &amp; Wharves</li>
+            <li>Shipyards</li>
+            <li>Waterfront Parks</li>
+            </ul>
+            "><span
+                  class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Waterfront
+                Engineering</a>
+            </li>
+          </ul>
+
+          <!-- Modal -->
+          <div x-show="isModalOpen" @click.away="closeModal()" @click="closeModal()"
+            class="fixed w-full h-full top-0 left-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-[9999]">
+            <div class="w-auto lg:max-w-[800px] max-w-[96%] min-h-[calc(100%_-_4rem)] my-7 mx-auto flex items-center">
+              <div class="bg-kpgrey text-white w-full h-[calc(100vh_-_10rem)] overflow-hidden relative">
+                <button @click="closeModal()" class="text-white absolute top-6 right-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <div class="flex items-center h-full lg:p-24 md:p-10 pt-16 p-6 overflow-hidden box-border" @click.stop>
+                  <div x-html="modalContent" class="pr-4 h-full overflow-auto modal_content scroll_bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="market_section">
+    <div class="full flex flex-wrap">
+      <div class="2xl:w-1/4 lg:w-1/3 w-full py-8 xl:px-16 px-8 bg-[#f4f6f6] flex items-center">
+        <div>
+          <h2 class="text-4xl font-semibold lg:mb-10 mb-4 capitalize">Market Segments</h2>
+          <p>Our network of some of the nation’s top engineering minds work on projects of all kinds and scales.</p>
+        </div>
+      </div>
+      <div class="2xl:w-3/4 lg:w-2/3 w-full lg:pt-14 pt-10 lg:p-12 p-8 bg-kpgrey text-white">
+        <div class="flex md:flex-nowrap flex-wrap xl:gap-x-10 gap-x-5 gap-y-5">
+          <ul class="md:w-1/3 w-full space-y-4 md:columns-1 sm:columns-2">
+            <li>Aviation</li>
+            <li>Bridges</li>
+            <li>Cargo Terminals</li>
+            <li>Civic</li>
+            <li>Data Centers</li>
+            <li>Education</li>
+            <li>Entertainment</li>
+            <li>Ferry Terminals</li>
+            <li>Fish Passage/Water Resources</li>
+            <li>Floating Structures</li>
+          </ul>
+          <ul class="md:w-1/3 w-full space-y-4 md:columns-1 sm:columns-2">
+            <li>Government</li>
+            <li>Healthcare</li>
+            <li>Hospitality</li>
+            <li>Industrial</li>
+            <li>Laboratories</li>
+            <li>Life Sciences</li>
+            <li>Manufacturing</li>
+            <li>Mass Timber</li>
+            <li>Military</li>
+          </ul>
+          <ul class="md:w-1/3 w-full space-y-4 md:columns-1 sm:columns-2">
+            <li>Natural Environments</li>
+            <li>Office</li>
+            <li>Parking</li>
+            <li>Piers &amp; Wharves</li>
+            <li>Ports &amp; Waterfront</li>
+            <li>Residential</li>
+            <li>Retail</li>
+            <li>Sports</li>
+            <li>Transportation</li>
+            <li>Tunnels &amp; Underground Stations</li>
+            <li><strong>More than we can name!</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="xl:px-16 px-8 xl:py-20 py-10">
+    <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+        <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html" class="text-inherit hover:text-kpblue">Leadership</a></h3>
+        <p>Get to know our team of Principals and Associates and learn more about their backgrounds and expertise.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">What’s New</a></h3>
+        <p>Check out some of our featured stories and news about our work</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html" class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+        <p>Discover more about our many teams and what makes them unique.
+          </p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html" class="text-kpblue">All Projects</a></h3>
+        <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <div class="header-foot text-sm text-kpgrey">
+          <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+            href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <g clip-path="url(#clip0_946_15438)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </a>
+          <div class="mb-3 flex gap-4">
+            <a class="text-[15px] text-black hover:underline"
+              href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+            <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+              Policy</a>
+          </div>
+          <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. <br>All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+  <script>
+    function modal() {
+      return {
+        isModalOpen: false,
+        modalContent: '',
+        openModal(event) {
+          this.modalContent = event.target.getAttribute('data-content');
+          if (this.modalContent.trim() !== '') { // Check if content is not empty
+            this.isModalOpen = true;
+            document.body.classList.add('overflow-hidden'); // Disable body scroll
+            
+            // Add event listener for Escape key when modal is open
+            document.addEventListener('keydown', this.handleEscapeKey.bind(this));
+          }
+        },
+        closeModal() {
+          this.isModalOpen = false;
+          this.modalContent = '';
+          document.body.classList.remove('overflow-hidden'); // Enable body scroll
+          
+          // Remove event listener when modal is closed
+          document.removeEventListener('keydown', this.handleEscapeKey.bind(this));
+        },
+        handleEscapeKey(event) {
+          if (event.key === 'Escape') {
+            this.closeModal();
+          }
+        }
+      };
+    }
+  </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+  <header class="absolute left-0 right-0 z-[1030]">
+    <nav
+      class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+      <div class="w-full relative flex justify-between items-center flex-nowrap">
+        <div class="flex items-center brand-breadcrumb md:max-w-none max-w-52">
+          <div class="flex items-end">
+            <a class="max-w-[80px] mr-3" href="#">
+              <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45" alt="">
+            </a>
+            <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Advancing Our Professions</span>
+          </div>
+        </div>
+        <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+          <div
+            class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+            <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }" @click.outside="show = false">
+              <!-- Search Bar Icon -->
+              <a href="javascript:;"
+                class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                @click="show = true" x-show="!show">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  class="svg img-fluid replaced-svg">
+                  <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                  <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                </svg>
+              </a>
+
+              <!-- Submit Button -->
+              <button type="submit" value="Submit"
+                class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10"
+                x-show="show" @click="show = false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  class="svg img-fluid replaced-svg">
+                  <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                  <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                </svg>
+              </button>
+
+              <!-- Search Input -->
+              <input type="text" name="s" placeholder="Search..."
+                :class="show ? 'w-[400px] opacity-100' : 'w-0 opacity-0'"
+                class="rounded-full py-3 pr-3 pl-6 absolute right-[76px] top-0 text-lg text-kpgrey transition-all duration-300 bg-white h-14"
+                x-show="show">
+            </form>
+
+            <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0" type="button"
+              x-on:click="open = !open">
+              <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+              <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+              <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+            </button>
+          </div>
+          <div
+            class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+            id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+            <div class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+              <div class="w-full">
+                <ul class="w-full">
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">Culture + Careers</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./our-people.html">Our People</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./projects.html">Projects + Services</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./locations.html">Let’s Connect</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">What’s New</a>
+                  </li>
+                </ul>
+              </div>
+              <a target="_blank"
+                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                Now</a>
+            </div>
+            <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;"
+              x-on:click="open = false">
+              <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+            </a>
+            <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+              <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <g clip-path="url(#clip0_946_15438)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                      fill="currentColor"></path>
+                  </g>
+                </svg>
+              </a>
+              <div class="mb-3 flex gap-4">
+                <a class="text-[15px] text-black hover:underline"
+                  href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+                  Policy</a>
+              </div>
+              <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. All rights reserved.</span>
+            </div>
+          </div>
+          <div
+            class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+            :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <section class="w-full lg:h-[85vh] lg:min-h-[500px] overflow-hidden">
+    <div class="w-full lg:h-full flex flex-wrap lg:flex-row flex-col-reverse">
+      <div class="lg:w-1/2 w-full lg:min-h-[500px] lg:pt-28 pt-8 pb-12 xl:px-16 px-8 bg-kpgrey text-white flex items-center">
+        <div>
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-semibold lg:mb-6 mb-4">Each project provides a unique opportunity to think outside the box </h1>
+            <p>Our engineers continually look for ways to support the industry with innovative solutions to any challenge. Whether it's contributing to code committees, presenting at conferences or teaching at universities we take pride in our role in advancing the engineering profession.</p>
+        </div>
+      </div>
+      <div class="lg:w-1/2 w-full lg:min-h-[500px]">
+        <div class="w-full lg:h-full relative">
+            <img class="block w-full h-full object-cover lg:absolute top-0 right-0 bottom-0 left-0" src="images/HeroImage_AOP.jpg" alt="" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w-full xl:p-16 p-8 flex md:flex-nowrap flex-wrap justify-between md:gap-10 gap-4">
+      <div class="md:w-full w-[calc(50%_-_16px_*_1_/_2)] relative text-[#5b6f7e] pt-4 md:pl-9 pl-5 min-h-[100px] text-base before:bg-[#f2f3f4] before:absolute before:w-[100px] before:h-[100px] before:left-0 before:top-0">
+        <h3 class="relative z-10 text-kpblue md:text-4xl text-2xl font-semibold">6,000+</h3>
+        <span class="relative z-10 md:max-w-full max-w-40 inline-block">design and technical awards</span>
+      </div>
+      <div class="md:w-full w-[calc(50%_-_16px_*_1_/_2)] relative text-[#5b6f7e] pt-4 md:pl-9 pl-5 min-h-[100px] text-base before:bg-[#f2f3f4] before:absolute before:w-[100px] before:h-[100px] before:left-0 before:top-0">
+        <h3 class="relative z-10 text-kpblue md:text-4xl text-2xl font-semibold">50+</h3>
+        <span class="relative z-10 md:max-w-full max-w-40 inline-block">active academic lecturers</span>
+      </div>
+      <div class="md:w-full w-[calc(50%_-_16px_*_1_/_2)] relative text-[#5b6f7e] pt-4 md:pl-9 pl-5 min-h-[100px] text-base before:bg-[#f2f3f4] before:absolute before:w-[100px] before:h-[100px] before:left-0 before:top-0">
+        <h3 class="relative z-10 text-kpblue md:text-4xl text-2xl font-semibold">400+</h3>
+        <span class="relative z-10 md:max-w-full max-w-40 inline-block">conference presentations</span>
+      </div>
+      <div class="md:w-full w-[calc(50%_-_16px_*_1_/_2)] relative text-[#5b6f7e] pt-4 md:pl-9 pl-5 min-h-[100px] text-base before:bg-[#f2f3f4] before:absolute before:w-[100px] before:h-[100px] before:left-0 before:top-0">
+        <h3 class="relative z-10 text-kpblue md:text-4xl text-2xl font-semibold">1000+</h3>
+        <span class="relative z-10 md:max-w-full max-w-40 inline-block">published works</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex flex-wrap">
+      <div class="w-full xl:w-1/4 sm:w-1/2 xl:pt-[25%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+        <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+        src="images/slide-1.jpg" alt="" />
+        <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0" href="#">
+          <div class="absolute xl:left-10 left-5 xl:bottom-10 bottom-5 xl:right-10 right-5">
+            <h4 class="mb-2 text-2xl font-semibold transition-all duration-300">
+              Edith Green-Wendell Wyatt Federal Building Modernization
+            </h4>
+            <span class="text-base">Seattle, Washington</span>
+          </div>
+        </a>
+      </div>
+      <div class="w-full xl:w-1/4 sm:w-1/2 xl:pt-[25%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+        <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+          src="images/slide-1.jpg" alt="" />
+        <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0" href="#">
+          <div class="absolute xl:left-10 left-5 xl:bottom-10 bottom-5 xl:right-10 right-5">
+            <h4 class="mb-2 text-2xl font-semibold transition-all duration-300">
+              Edith Green-Wendell Wyatt Federal Building Modernization
+            </h4>
+            <span class="text-base">Seattle, Washington</span>
+          </div>
+        </a>
+      </div>
+      <div class="w-full xl:w-1/4 sm:w-1/2 xl:pt-[25%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+        <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+          src="images/slide-1.jpg" alt="" />
+        <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0" href="#">
+          <div class="absolute xl:left-10 left-5 xl:bottom-10 bottom-5 xl:right-10 right-5">
+            <h4 class="mb-2 text-2xl font-semibold transition-all duration-300">
+              Edith Green-Wendell Wyatt Federal Building Modernization
+            </h4>
+            <span class="text-base">Seattle, Washington</span>
+          </div>
+        </a>
+      </div>
+      <div class="w-full xl:w-1/4 sm:w-1/2 xl:pt-[25%] sm:pt-[50%] pt-[100%] relative projects_overlay overflow-hidden before:opacity-80 hover:before:opacity-70 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30 before:transition-all before:duration-300">
+        <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+          src="images/slide-1.jpg" alt="" />
+        <a class="text-white absolute top-0 left-0 w-full h-full z-40 flex after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0" href="#">
+          <div class="absolute xl:left-10 left-5 xl:bottom-10 bottom-5 xl:right-10 right-5">
+            <h4 class="mb-2 text-2xl font-semibold transition-all duration-300">
+              Edith Green-Wendell Wyatt Federal Building Modernization
+            </h4>
+            <span class="text-base">Seattle, Washington</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#f2f3f4] xl:p-16 xl:py-12 p-8">
+    <div class="flex flex-wrap -mx-5 gap-y-8">
+      <div class="w-full lg:w-1/3 text-center relative related_news px-5">
+        <div class="mb-5 w-full max-w-[350px] h-[380px] mx-auto overflow-hidden">
+            <img class="w-full h-full object-cover transition-all duration-500 scale-100" src="images/ASCE_PD.jpg" alt="">
+        </div>
+        <h3 class="text-2xl font-semibold max-w-[430px] mx-auto">
+            <a href="#" class="text-inherit hover:text-[#878f9a] hover:underline after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0">Highlights of the New ASCE Structural Design for Physical Security</a>
+        </h3>
+      </div>
+      <div class="w-full lg:w-1/3 text-center relative related_news px-5">
+        <div class="mb-5 w-full max-w-[350px] h-[380px] mx-auto overflow-hidden">
+            <img class="w-full h-full object-cover transition-all duration-500 scale-100" src="images/CaltechHousing_PhotoByBruceDamonte_29-hero.jpg" alt="">
+        </div>
+        <h3 class="text-2xl font-semibold max-w-[430px] mx-auto">
+            <a href="#" class="text-inherit hover:text-[#878f9a] hover:underline after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0">Caltech Bechtel Residence and Integrated Project Delivery</a>
+        </h3>
+      </div>
+      <div class="w-full lg:w-1/3 text-center relative related_news px-5">
+        <div class="mb-5 w-full max-w-[350px] h-[380px] mx-auto overflow-hidden">
+            <img class="w-full h-full object-cover transition-all duration-500 scale-100" src="images/BSU-MMSB-blog-hero.jpg" alt="">
+        </div>
+        <h3 class="text-2xl font-semibold max-w-[430px] mx-auto">
+            <a href="#" class="text-inherit hover:text-[#878f9a] hover:underline after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0">Boise State University Micron Center for Materials Research</a>
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="full flex flex-wrap">
+      <div class="2xl:w-3/4 lg:w-2/3 w-full xl:p-16 xl:py-12 p-8">
+        <div class="flex flex-col lg:space-y-7 space-y-5 leading-7 cms_content">
+            <h4>Recent Contributions to our Profession Include:</h4>
+            <ul>
+            <li>ACI 318 Building Code and Sustainability Subcommittee Chairs</li>
+            <li>ACI Technical Committee 445 Shear and Torsion and 445A Strut and Tie Modeling (Voting Members)</li>
+            <li>Collaborating on the latest State of the Practice Book on Structural Design for Physical Security</li>
+            <li>Leadership in performance-based design, including authoring early building codes for seismic isolation, pioneering seismic retrofit of hospitals, and initiating</li>
+            </ul>
+            <h4>Annual Conference Participation and Presentations:</h4>
+            <ul>
+            <li>International Mass Timber Conference</li>
+            <li>COPRI/ASCE Ports Conference</li>
+            <li>U.S. National Conference on Earthquake Engineering</li>
+            <li>L.A. Tall Building Structural Design Council Annual Meeting</li>
+            <li>Earthquake Engineering Research Institute Annual Meeting</li>
+            <li>Sustainable Stormwater Symposium</li>
+            <li>We Count on Water Conference (Czech Republic)</li>
+            </ul>
+            <h4>Leadership in and Contributions to National Industry Associations:</h4>
+            <ul>
+            <li><a href="https://www.asce.org/search#q=kpff&amp;sort=relevancy" target="_blank" rel="noopener">American Society of Civil Engineers</a> (ASCE)
+            <ul>
+            <li>ASCE 41 Committee on Seismic Evaluation and Retrofit of Existing Buildings – Technical Committee Associate Member</li>
+            <li>ASCE 7-16, Flood Loads Subcommittee and 7-22, Tsunami Loads and Effects Subcommittee</li>
+            <li>ASCE Sea Level Change Subcommittee</li>
+            </ul>
+            </li>
+            <li><a href="https://www.acementor.org/" target="_blank" rel="noopener">ACE Mentor Program</a> (Cornerstone Level Sponsor)
+            <ul>
+            <li>KPFF Louisville Affiliate Chapter recently named our own Brayden Blair Ace Mentor of the Year!</li>
+            </ul>
+            </li>
+            <li><a href="https://buildingventures.com/network/" target="_blank" rel="noopener">Building Ventures Innovation Network</a></li>
+            <li><a href="https://globalda.com/#members" target="_blank" rel="noopener">Global Design Alliance</a> (GDA)</li>
+            <li><a href="https://dbia.org/?s=kpff#" target="_blank" rel="noopener">Design-Build Industry of America</a> (DBIA)</li>
+            <li><a href="https://www.cirt.org/" target="_blank" rel="noopener">Construction Industry Round Table</a> (CIRT)</li>
+            <li><a href="https://www.atcouncil.org/" target="_blank" rel="noopener">Applied Technology Council</a> (ATC)
+            <ul>
+            <li>Participation on the Board of Directors for 2022-2025 term to help oversee ATC research projects that may serve as basis for building code updates (i.e. IBS, ASCE 7 and ASCE 41)</li>
+            </ul>
+            </li>
+            <li><a href="https://www.nibs.org/bssc" target="_blank" rel="noopener">Building Seismic Safety Council</a> (BSSC)
+            <ul>
+            <li>Member of Provisions Update Committee (PUC) to develop 2026 NEHRP Provisions, the pre-standard to ASCE 7.</li>
+            </ul>
+            </li>
+            <li><a href="https://wiops.org/" target="_blank" rel="noopener">Women in Construction Operations (WiOPS)</a>, NorCal and SoCal Chapters</li>
+            <li><a href="https://www.acec.org/" target="_blank" rel="noopener">American Council of Engineering Companies (ACEC)</a>
+            <ul>
+            <li>Participation on the Board and Chair of ACEC Scholarship Committee – Dedicated to working with local colleges and universities to identify high performing engineering students in need of financial assistance while helping to foster a sustainable industry</li>
+            </ul>
+            </li>
+            <li><a href="https://leanconstruction.org/?gclid=EAIaIQobChMIwI6d45n79wIVvhXUAR2gWg6wEAAYASAAEgKe1fD_BwE">Lean Construction Institute</a></li>
+            <li><a href="https://www.asce.org/communities/institutes-and-technical-groups/structural-engineering-institute" target="_blank" rel="noopener">Structural Engineering Institute</a>
+            <ul>
+            <li>Shock &amp; Blast Impact Committee and National Technical Planning Committee</li>
+            </ul>
+            </li>
+            <li><a href="https://www.aisc.org/" target="_blank" rel="noopener">American Institute of Steel Construction</a></li>
+            <li><a href="https://uli.org/" target="_blank" rel="noopener">Urban Land Institute</a></li>
+            <li><a href="https://www.same.org/" target="_blank" rel="noopener">Society of American Military Engineers</a></li>
+            <li><a href="https://www.ewb-usa.org/" target="_blank" rel="noopener">Engineers without Borders</a></li>
+            <li><a href="https://sustainableinfrastructure.org/" target="_blank" rel="noopener">Institute for Sustainable Infrastructure</a></li>
+            <li><a href="https://aimehq.org/" target="_blank" rel="noopener">American Institute of Mining and Petroleum Engineers</a></li>
+            <li><a href="https://www.apwa.net/" target="_blank" rel="noopener">American Public Works Association</a></li>
+            <li><a href="https://awc.org/" target="_blank" rel="noopener">American Wood Council</a></li>
+            <li><a href="https://www.asce.org/communities/institutes-and-technical-groups/coasts-ports-oceans-rivers-institute" target="_blank" rel="noopener">Coasts, Oceans, Ports, Rivers Institute (COPRI)</a></li>
+            <li><a href="https://www.iccsafe.org/" target="_blank" rel="noopener">International Code Council</a></li>
+            <li><a href="https://www.plib.org/aitc/" target="_blank" rel="noopener">American Institute of Timber Construction</a></li>
+            <li><a href="https://www.astm.org/" target="_blank" rel="noopener">ASTM International (Formerly American Society for Testing and Materials)</a>
+            <ul>
+            <li>Voting Member of ASTM Committee E06: Performance of Buildings</li>
+            </ul>
+            </li>
+            </ul>
+            <h4>Academic Affiliations and Lecturer Contributions:</h4>
+            <ul>
+            <li>University of California Los Angeles, Department of Civil and Environmental Engineering (Current and Past Lecturers and Alumni Advisory Board Members)</li>
+            <li>University of Southern California Architectural Guild</li>
+            <li>Cal Poly San Luis Obispo, Architectural Engineering Department</li>
+            <li>Southern California Institute of Architecture (SCI-ARC)</li>
+            <li>Southern Illinois University, Department of Civil and Environmental Engineering, Professional Advisory Board</li>
+            <li>University of Louisville</li>
+            <li>California State University Chico Professional Advisory Board</li>
+            <li>University of California San Diego</li>
+            <li>Boise State University Civil Engineering Department</li>
+            </ul>
+        </div>
+      </div>
+      <div class="2xl:w-1/4 lg:w-1/3 w-full xl:p-16 md:p-8 px-8 pb-8 flex flex-col space-y-7">
+        <img class="w-full" src="images/single-slide-1.jpg" alt="" />
+        <img class="w-full" src="images/single-slide-2.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-kpgrey text-white xl:p-16 xl:py-5 p-8">
+    <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+      <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">What We’re Passionate About</h3>
+      <ul class="services sm:columns-2 text-base w-full">
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Advancing
+                  our Professions</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Justice,
+                  Equity, Diversity + Inclusion</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Helping
+                  Our Communities</a>
+          </li>
+          <li class="py-1">
+              <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                  href="#"><span
+                      class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Sustainability
+                  + Environmental Responsibility</a>
+          </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-[#f2f3f4] xl:p-16 xl:py-5 p-8">
+    <div class="flex xl:flex-nowrap flex-wrap justify-between items-center xl:gap-20 gap-3">
+      <h3 class="text-xl font-semibold text-[#a6a6a5] whitespace-nowrap min-w-[285px]">Why Work For KPFF?</h3>
+      <ul class="services sm:columns-2 text-base w-full">
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Forefront Education Program</a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Differentiators
+                </a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Benefits</a>
+        </li>
+        <li class="py-1">
+            <a class="relative bg-arrow-blue bg-no-repeat bg-[0px] flex items-center pl-5 capitalize hover:ml-4 hover:underline w-fit"
+                href="#"><span
+                    class="absolute left-0 h-[2px] w-0 before:absolute before:right-[-6px] before:bg-kp-light-blue before:h-[2px] before:opacity-0 before:w-0 before:transition-all before:duration-300"></span>Purpose, Vision + Values</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="xl:px-16 px-8 xl:py-20 py-10">
+    <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+        <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html" class="text-inherit hover:text-kpblue">Leadership</a></h3>
+        <p>Get to know our team of Principals and Associates and learn more about their backgrounds and expertise.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">What’s New</a></h3>
+        <p>Check out some of our featured stories and news about our work</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html" class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+        <p>Discover more about our many teams and what makes them unique.
+          </p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html" class="text-inherit hover:text-kpblue">All Projects</a></h3>
+        <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <div class="header-foot text-sm text-kpgrey">
+          <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+            href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <g clip-path="url(#clip0_946_15438)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </a>
+          <div class="mb-3 flex gap-4">
+            <a class="text-[15px] text-black hover:underline"
+              href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+            <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+              Policy</a>
+          </div>
+          <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. <br>All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

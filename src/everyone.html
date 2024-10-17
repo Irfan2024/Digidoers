@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+  <header class="absolute left-0 right-0 z-[1030]">
+    <nav class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+      <div class="w-full relative flex justify-between items-center flex-nowrap">
+        <div class="flex items-center brand-breadcrumb">
+          <div class="flex items-end">
+            <a class="max-w-[80px] mr-3" href="#">
+              <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45" alt="">
+            </a>
+            <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Everyone</span>
+          </div>
+        </div>
+        <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+          <div class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+            <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }" @click.outside="show = false">
+                <!-- Search Bar Icon -->
+                <a href="javascript:;" 
+                   class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                   @click="show = true" 
+                   x-show="!show">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </a>
+        
+                <!-- Submit Button -->
+                <button type="submit" value="Submit" 
+                        class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                        x-show="show" 
+                        @click="show = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </button>
+        
+                <!-- Search Input -->
+                <input type="text" name="s" placeholder="Search..." 
+                       :class="show ? 'md:w-[400px] w-[263px] opacity-100' : 'w-0 opacity-0'" 
+                       class="rounded-full md:py-3 py-1 pr-3 md:pl-6 pl-4 absolute md:right-[76px] right-12 top-0 md:text-lg text-sm text-kpgrey transition-all duration-300 bg-white md:h-14 h-10"
+                       x-show="show">
+            </form>
+        
+            <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0" type="button" x-on:click="open = !open">
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+            </button>
+          </div>
+          <div
+            class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+            id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+            <div class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+              <div class="w-full">
+                <ul class="w-full">
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">Culture + Careers</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./our-people.html">Our People</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./projects.html">Projects + Services</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./locations.html">Let’s Connect</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">What’s New</a>
+                  </li>
+                </ul>
+              </div>
+              <a target="_blank"
+                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                Now</a>
+            </div>
+            <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;" x-on:click="open = false">
+              <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+            </a>
+            <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+              <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <g clip-path="url(#clip0_946_15438)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                      fill="currentColor"></path>
+                  </g>
+                </svg>
+              </a>
+              <div class="mb-3 flex gap-4">
+                <a class="text-[15px] text-black hover:underline"
+                  href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+                  Policy</a>
+              </div>
+              <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. All rights reserved.</span>
+            </div>
+          </div>
+          <div
+            class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+            :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bg-kpgrey md:pt-24 pt-20">
+    <div class="w-full flex flex-wrap items-start">
+      <div class="text-white 2xl:w-1/4 lg:w-1/3 w-full lg:sticky top-0 lg:py-16 xl:px-16 px-8 xl:pb-20 lg:pb-16 pt-5 pb-8">
+        <h1 class="lg:text-3xl text-2xl mb-4 font-semibold">Everyone</h1>
+        <form action="">
+          <div class="mb-9 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 absolute left-2 top-3 text-white">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input type="search" name="" placeholder="Search..." id=""
+              class="w-full h-12 py-3 pl-10 pr-3 bg-transparent border border-gray-400 border-b-2 outline-none text-[#939598]">
+          </div>
+          <label for="" class="text-xl font-semibold block mb-2">Filter By:</label>
+          
+          <div
+            x-data="{
+              open: false, 
+              selected: [], 
+              toggleSelection(option) {
+                if (this.selected.includes(option)) {
+                  this.selected = this.selected.filter(item => item !== option);
+                } else {
+                  this.selected.push(option);
+                }
+              }
+            }"
+            @click.away="open = false"
+            class="relative"
+            :class="{'open': open}"
+          >
+            <!-- Button -->
+            <button
+              type="button"
+              @click="open = !open"
+              class="w-full h-12 py-2 px-3 pr-10 bg-transparent border border-gray-400 border-b-2 outline-none appearance-none text-[#939598] flex justify-between"
+              :class="{'text-[#939598]': selected.length > 0, 'text-[#939598]': selected.length === 0}"
+            >
+              <span
+                class="overflow-hidden"
+                x-text="selected.length === 0 
+                  ? 'Select options' 
+                  : selected.length === 1 
+                  ? '1 option selected' 
+                  : `${selected.length} options selected`"
+              ></span>
+              <svg
+                class="ml-2 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div
+              x-show="open"
+              class="absolute mt-2 bg-white border rounded w-full z-10"
+              x-cloak
+            >
+              <ul
+                class="max-h-[140px] overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 [&>li]:cursor-pointer"
+              >
+                <li>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="mr-2"
+                      value="Option 1"
+                      @change="toggleSelection('Option 1')"
+                      :checked="selected.includes('Option 1')"
+                    />
+                    <span>Option 1</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="mr-2"
+                      value="Option 2"
+                      @change="toggleSelection('Option 2')"
+                      :checked="selected.includes('Option 2')"
+                    />
+                    <span>Option 2</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="mr-2"
+                      value="Option 3"
+                      @change="toggleSelection('Option 3')"
+                      :checked="selected.includes('Option 3')"
+                    />
+                    <span>Option 3</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="mr-2"
+                      value="Option 4"
+                      @change="toggleSelection('Option 4')"
+                      :checked="selected.includes('Option 4')"
+                    />
+                    <span>Option 4</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="mr-2"
+                      value="Option 5"
+                      @change="toggleSelection('Option 5')"
+                      :checked="selected.includes('Option 5')"
+                    />
+                    <span>Option 5</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 bg-transparent border border-gray-400 border-b-2 outline-none appearance-none text-[#939598]">
+              <option class="bg-white text-black">Team</option>
+            </select>
+          </div>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-white">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 bg-transparent border border-gray-400 border-b-2 outline-none appearance-none text-[#939598]">
+              <option class="bg-white text-black">Discipline</option>
+            </select>
+          </div>          
+          <button type="submit" class="py-2 px-7 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+          href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Filter</button>
+        </form>
+      </div>
+      <div class="2xl:w-3/4 lg:w-2/3 w-full">
+        <div class="">
+          <div class="flex flex-wrap team_list">
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-1.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-2.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-3.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-1.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-2.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-3.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-2.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/5 2xl:w-1/4 xl:w-1/3 sm:w-1/2">
+              <div class="relative team_member" x-data="{ tooltip: false }">
+                <div class="w-full pt-[100%] relative flex items-end everyone_team_overlay before:opacity-0 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 hover:before:opacity-50">
+                  <a class="absolute top-0 right-0 bottom-0 left-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 overflow-hidden block" href="./ramzi-hodali-se.html" x-on:mouseover="tooltip = true" x-on:mouseleave="tooltip = false">
+                    <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-3.jpg" alt="" />
+                  </a>
+                  <div class="absolute md:top-0 top-auto md:bottom-0 -bottom-12 md:left-3/4 left-0 right-0 md:w-[200px] z-30 pointer-events-none flex items-center" x-cloak x-show.transition.origin.top="tooltip">
+                    <div class="bg-kpgrey text-white p-4 relative arrow mx-auto md:text-left text-center">
+                      <h2 class="text-white transition-all duration-300 relative z-10 font-semibold">Sean Kelton PE</h2>
+                      <span class="inline-block font-light">Associate <br>New York, NY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="load-more" class="flex justify-center items-center gap-5 bg-kpgrey text-white xl:text-3xl text-2xl font-semibold xl:py-4 p-3 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="size-7 text-kp-light-blue relative top-px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+          Load More
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w-full xl:h-[650px] md:h-[600px] min-h-[500px] flex items-stretch justify-center">
+      <div class="w-full md:h-full">
+        <div x-data="{
+          activeSlide: 1,
+          slideCount: 3,
+          intervalId: null,
+          startX: 0,
+          endX: 0,
+          isDragging: false,
+          startProgress() {
+              // Start your progress or autoplay logic here
+          },
+          onPointerDown(event) {
+              this.startX = event.clientX || event.touches[0].clientX;
+              this.isDragging = true;
+          },
+          onPointerMove(event) {
+              if (!this.isDragging) return;
+              this.endX = event.clientX || event.touches[0].clientX;
+          },
+          onPointerUp() {
+              if (!this.isDragging) return;
+              this.isDragging = false;
+              const deltaX = this.startX - this.endX;
+              if (Math.abs(deltaX) > 50) { // Adjust the threshold as needed
+                  if (deltaX > 0) {
+                      this.nextSlide();
+                  } else {
+                      this.prevSlide();
+                  }
+              }
+          },
+          nextSlide() {
+              if (this.activeSlide < this.slideCount) {
+                  this.activeSlide++;
+              } else {
+                  this.activeSlide = 1;
+              }
+          },
+          prevSlide() {
+                if (this.activeSlide > 1) {
+                    this.activeSlide--;
+                } else {
+                    this.activeSlide = this.slideCount;
+                }
+            }
+          }" 
+          x-init="startProgress()" 
+          class="overflow-hidden relative w-full md:h-full"
+          @pointerdown="onPointerDown($event)"
+          @pointermove="onPointerMove($event)"
+          @pointerup="onPointerUp()"
+          @pointercancel="onPointerUp()"
+          @touchstart="onPointerDown($event)"
+          @touchmove="onPointerMove($event)"
+          @touchend="onPointerUp()">
+          <!-- Slider -->
+          <div class="flex transition-transform duration-500 ease-in-out md:h-full"
+            :style="'transform: translateX(-' + (activeSlide - 1) * 100 + '%)'">
+            <!-- Item 1 -->
+            <div class="flex-shrink-0 w-full md:h-full relative before:bg-kpblue before:opacity-95 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+              <img class="md:block w-full md:h-full object-cover object-center absolute hidden" src="images/slide-1.jpg" alt="" />
+              <div class="flex items-center md:absolute relative top-0 right-0 bottom-0 left-0 z-40">
+                <div class="xl:px-16 px-8 xl:py-10 xl:pb-32 md:py-10 pt-10 pb-16">
+                  <div class="flex md:flex-nowrap flex-wrap items-stretch lg:gap-10 gap-6 lg:mb-12 mb-8">
+                    <div class="w-full lg:max-w-96 md:max-w-72 overflow-hidden">
+                      <img class="block w-full transition-all duration-500 scale-100 hover:scale-110 max-h-80 object-cover" src="images/slide-1.jpg" alt="" />
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div class="md:pt-10">
+                        <h2 class="mb-2 text-2xl font-light text-white">Introducing</h2>
+                        <h3 class="xl:mb-8 mb-5 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold text-white">
+                          Anne Fabrello-Streufert, PE, SE
+                        </h3>
+                      </div>
+                      <h4 class="font-light text-white md:mb-5">Associate Seattle, WA</h4>
+                    </div>
+                  </div>
+                  <div class="text-white">Keris Buccola is the newest member of the team in Louisville, joining as an operations intern. With a foundation in social media marketing gained at Western Kentucky University and an eagerness to learn and grow, Keris brings a fresh perspective and a wealth of knowledge. Keris is also currently pursuing her real state license in Kentucky. Keri’s exceptional drive and organizational skills make her an asset, and we eagerly anticipate her talents to help the office maintain optimal efficiency</div>
+                </div>                
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex-shrink-0 w-full md:h-full relative before:bg-kpblue before:opacity-95 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+              <img class="md:block w-full md:h-full object-cover object-center absolute hidden" src="images/slide-2.jpg" alt="" />
+              <div class="flex items-center md:absolute relative top-0 right-0 bottom-0 left-0 z-40">
+                <div class="xl:px-16 px-8 xl:py-10 xl:pb-32 md:py-10 pt-10 pb-16">
+                  <div class="flex md:flex-nowrap flex-wrap items-stretch lg:gap-10 gap-6 lg:mb-12 mb-8">
+                    <div class="w-full lg:max-w-96 md:max-w-72 overflow-hidden">
+                      <img class="block w-full transition-all duration-500 scale-100 hover:scale-110" src="images/slide-1.jpg" alt="" />
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div class="md:pt-10">
+                        <h2 class="mb-2 text-2xl font-light text-white">Introducing</h2>
+                        <h3 class="xl:mb-8 mb-5 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold text-white">
+                          Anne Fabrello-Streufert, PE, SE
+                        </h3>
+                      </div>
+                      <h4 class="font-light text-white md:mb-5">Associate Seattle, WA</h4>
+                    </div>
+                  </div>
+                  <div class="text-white">Keris Buccola is the newest member of the team in Louisville, joining as an operations intern. With a foundation in social media marketing gained at Western Kentucky University and an eagerness to learn and grow, Keris brings a fresh perspective and a wealth of knowledge. Keris is also currently pursuing her real state license in Kentucky. Keri’s exceptional drive and organizational skills make her an asset, and we eagerly anticipate her talents to help the office maintain optimal efficiency</div>
+                </div>                
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="flex-shrink-0 w-full md:h-full relative before:bg-kpblue before:opacity-95 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:z-30">
+              <img class="md:block w-full md:h-full object-cover object-center absolute hidden" src="images/slide-3.jpg" alt="" />
+              <div class="flex items-center md:absolute relative top-0 right-0 bottom-0 left-0 z-40">
+                <div class="xl:px-16 px-8 xl:py-10 xl:pb-32 md:py-10 pt-10 pb-16">
+                  <div class="flex md:flex-nowrap flex-wrap items-stretch lg:gap-10 gap-6 lg:mb-12 mb-8">
+                    <div class="w-full lg:max-w-96 md:max-w-72 overflow-hidden">
+                      <img class="block w-full transition-all duration-500 scale-100 hover:scale-110" src="images/slide-1.jpg" alt="" />
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div class="md:pt-10">
+                        <h2 class="mb-2 text-2xl font-light text-white">Introducing</h2>
+                        <h3 class="xl:mb-8 mb-5 xl:text-4xl md:text-3xl text-2xl tracking-[-.25px] font-semibold text-white">
+                          Anne Fabrello-Streufert, PE, SE
+                        </h3>
+                      </div>
+                      <h4 class="font-light text-white md:mb-5">Associate Seattle, WA</h4>
+                    </div>
+                  </div>
+                  <div class="text-white">Keris Buccola is the newest member of the team in Louisville, joining as an operations intern. With a foundation in social media marketing gained at Western Kentucky University and an eagerness to learn and grow, Keris brings a fresh perspective and a wealth of knowledge. Keris is also currently pursuing her real state license in Kentucky. Keri’s exceptional drive and organizational skills make her an asset, and we eagerly anticipate her talents to help the office maintain optimal efficiency</div>
+                </div>                
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots Navigation -->
+          <div class="absolute xl:bottom-20 xl:left-14 bottom-8 left-6 space-x-2 z-50">
+            <template x-for="slideIndex in slideCount" :key="slideIndex">
+              <button @click="activeSlide = slideIndex" class="h-[6px] w-8"
+                :class="{'bg-white': activeSlide === slideIndex, 'bg-white/50': activeSlide !== slideIndex}"></button>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="xl:px-16 px-8 xl:py-20 py-10">
+    <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+        <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html" class="text-inherit hover:text-kpblue">Leadership</a></h3>
+        <p>Get to know our team of Principals and Associates and learn more about their backgrounds and expertise.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">What’s New</a></h3>
+        <p>Check out some of our featured stories and news about our work</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html" class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+        <p>Discover more about our many teams and what makes them unique.
+          </p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html" class="text-inherit hover:text-kpblue">All Projects</a></h3>
+        <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <div class="header-foot text-sm text-kpgrey">
+          <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+            href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <g clip-path="url(#clip0_946_15438)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </a>
+          <div class="mb-3 flex gap-4">
+            <a class="text-[15px] text-black hover:underline"
+              href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+            <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+              Policy</a>
+          </div>
+          <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. <br>All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

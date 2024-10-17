@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-verb xl:text-lg font-base font-normal text-kpgrey tracking-[-.1px]">
+  <header class="absolute left-0 right-0 z-[1030]">
+    <nav class="w-full relative flex items-center justify-start flex-row flex-nowrap transition-all duration-300 py-6 xl:px-16 px-8">
+      <div class="w-full relative flex justify-between items-center flex-nowrap">
+        <div class="flex items-center brand-breadcrumb">
+          <div class="flex items-end">
+            <a class="max-w-[80px] mr-3" href="#">
+              <img class="md:max-w-full max-w-14" src="images/logo-white.svg" width="80" height="45" alt="">
+            </a>
+            <span class="text-white md:text-sm text-[10px] font-semibold md:pb-2 pb-1">Principals + Associates</span>
+          </div>
+        </div>
+        <div class="flex items-center ml-auto fixed top-5 xl:right-20 right-8" x-data="{ open: false }">
+          <div class="relative flex items-center justify-around md:w-32 w-24 md:h-14 h-10 rounded-full bg-white after:bg-[#ececec] after:h-10 after:w-px after:absolute after:left-0 after:right-0 after:mx-auto">
+            <form action="" class="" x-data="{ show: false }" :class="{ 'show': show }" @click.outside="show = false">
+                <!-- Search Bar Icon -->
+                <a href="javascript:;" 
+                   class="search-bar w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                   @click="show = true" 
+                   x-show="!show">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </a>
+        
+                <!-- Submit Button -->
+                <button type="submit" value="Submit" 
+                        class="w-6 h-6 flex justify-center items-center bg-transparent border-none p-0 outline-none relative z-10" 
+                        x-show="show" 
+                        @click="show = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none" class="svg img-fluid replaced-svg">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="#0063A3" stroke-width="2"></circle>
+                        <path d="M12 12L18 18" stroke="#0063A3" stroke-width="2"></path>
+                    </svg>
+                </button>
+        
+                <!-- Search Input -->
+                <input type="text" name="s" placeholder="Search..." 
+                       :class="show ? 'w-[400px] opacity-100' : 'w-0 opacity-0'" 
+                       class="rounded-full py-3 pr-3 pl-6 absolute right-[76px] top-0 text-lg text-kpgrey transition-all duration-300 bg-white h-14"
+                       x-show="show">
+            </form>
+        
+            <button class="navbar-toggler border-none py-1 w-6 h-6 flex items-start flex-col outline-0" type="button" x-on:click="open = !open">
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] mb-1 transition-all duration-300"></div>
+                <div class="relative w-5 h-[2px] bg-[#0063a3] transition-all duration-300"></div>
+            </button>
+          </div>
+          <div
+            class="md:w-[500px] w-full fixed block left-auto top-0 right-0 bottom-0 bg-white z-20 transition-all duration-500 translate-x-full pt-24 md:px-11 px-8 pb-44"
+            id="divNavbar" :class="{ 'translate-x-full': !open, 'translate-x-0': open }">
+            <div class="w-full h-full pb-3 flex flex-col items-start overflow-auto max-h-[calc(100vh_-_272px)]">
+              <div class="w-full">
+                <ul class="w-full">
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">Culture + Careers</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./our-people.html">Our People</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./projects.html">Projects + Services</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="./locations.html">Let’s Connect</a>
+                  </li>
+                  <li class="menu_item md:mb-8 mb-5 w-full">
+                    <a class="flex text-kpgrey hover:text-kpblue relative md:text-[32px] md:leading-[42px] text-2xl transition-all duration-300 overflow-hidden hover:pl-9 font-bold before:bg-arrow before:w-5 before:h-3 before:absolute before:top-0 before:bottom-0 before:m-auto before:-ml-9 before:transition-all before:duration-300"
+                      href="#">What’s New</a>
+                  </li>
+                </ul>
+              </div>
+              <a target="_blank"
+                class="p-[18px] px-6 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+                href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Apply
+                Now</a>
+            </div>
+            <a class="close-icon absolute md:top-[30px] top-3 md:right-[50px] right-3" href="javascript:;" x-on:click="open = false">
+              <img class="img-fluid" src="images/icon-x.svg" width="50" height="50" alt="close icon">
+            </a>
+            <div class="header-foot absolute bottom-[45px] text-sm text-kpgrey">
+              <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+                href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <g clip-path="url(#clip0_946_15438)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                      fill="currentColor"></path>
+                  </g>
+                </svg>
+              </a>
+              <div class="mb-3 flex gap-4">
+                <a class="text-[15px] text-black hover:underline"
+                  href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+                <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+                  Policy</a>
+              </div>
+              <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. All rights reserved.</span>
+            </div>
+          </div>
+          <div
+            class=" overlay fixed bg-black bg-opacity-30 top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 invisible transition-all duration-300 z-10"
+            :class="{ 'opacity-0 invisible': !open, 'opacity-1 visible': open }" x-on:click="open = false"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bg-kpgrey pt-24">
+    <div class="w-full flex flex-wrap items-start">
+      <div class="text-white 2xl:w-1/4 lg:w-1/3 w-full lg:sticky top-0 py-16 xl:px-16 px-8 xl:pb-20 md:pb-16 pb-8">
+        <h1 class="2xl:text-3xl text-2xl mb-7 font-semibold">Principals + Associates</h1>
+        <form action="">
+          <div class="mb-9 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 absolute left-2 top-3 text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input type="search" name="" placeholder="Search..." id=""
+              class="w-full h-12 py-3 pl-10 pr-3 bg-transparent border border-gray-400 border-b-2 outline-none">
+          </div>
+          <label for="" class="text-xl font-semibold block mb-2">Filter By:</label>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 bg-transparent border border-gray-400 border-b-2 outline-none appearance-none">
+              <option class="bg-white text-black">Team</option>
+            </select>
+          </div>
+          <div class="mb-3 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-6 absolute top-3 right-3 pointer-events-none text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <select id="location" name="location"
+              class="w-full h-12 py-2 px-3 pr-10 bg-transparent border border-gray-400 border-b-2 outline-none appearance-none">
+              <option class="bg-white text-black">Discipline</option>
+            </select>
+          </div>          
+          <button type="submit" class="py-2 px-7 bg-kpblue text-white hover:bg-kphoverblue transition-all duration-300"
+          href="https://phe.tbe.taleo.net/phe01/ats/careers/v2/jobSearch?org=KPFF_2&amp;cws=64">Filter</button>
+        </form>
+      </div>
+      <div class="2xl:w-3/4 lg:w-2/3 w-full">
+        <div class="bg-white xl:p-16 p-8">
+          <div class="flex flex-wrap xl:gap-y-10 gap-y-8 xl:-mx-5 -mx-4">
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-1.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-2.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-3.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-1.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-2.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+            <div class="w-full 4xl:w-1/4 xl:w-1/3 sm:w-1/2 xl:px-5 px-4">
+              <div class="relative team_member">
+                <div class="w-full pt-[100%] relative flex items-end team_overlay overflow-hidden before:opacity-70 before:absolute before:left-0 before:right-0 before:bottom-0 before:z-10 before:transition-all before:duration-300 before:h-20">
+                  <img class="block w-full h-full object-cover absolute transition-all duration-500 scale-100 top-0 right-0 bottom-0 left-0"
+                    src="images/people-3.jpg" alt="" />
+                  <h2 class="text-white text-xl transition-all duration-300 z-10 absolute bottom-7 left-7">Sean Kelton PE</h2>
+                </div>
+                <a class="text-[#96a4ab] after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:z-20 px-7 mt-2 inline-block" href="./ramzi-hodali-se.html">
+                  <span class="inline-block">Associate <br>New York, NY</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="load-more" class="flex justify-center items-center gap-5 bg-kpgrey text-white xl:text-4xl text-3xl font-semibold xl:py-6 p-5 cursor-pointer">          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="size-7 text-kp-light-blue relative top-px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+          Load More
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="xl:px-16 px-8 xl:py-20 py-10">
+    <div class="flex flex-wrap xl:-mx-16 -mx-8 md:gap-y-8 gap-y-5">
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">Culture + Careers</a></h3>
+        <p>Discover the vibrant KPFF community and find out how you can be a part of it.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./our-people.html" class="text-inherit hover:text-kpblue">Leadership</a></h3>
+        <p>Get to know our team of Principals and Associates and learn more about their backgrounds and expertise.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="#" class="text-inherit hover:text-kpblue">What’s New</a></h3>
+        <p>Check out some of our featured stories and news about our work</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./locations.html" class="text-inherit hover:text-kpblue">Let’s Connect</a></h3>
+        <p>Discover more about our many teams and what makes them unique.
+          </p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <h3 class="md:text-3xl text-2xl md:font-bold font-semibold md:mb-3 mb-2"><a href="./projects.html" class="text-inherit hover:text-kpblue">All Projects</a></h3>
+        <p>Browse our portfolio to learn more about the breadth of our experience.</p>
+      </div>
+      <div class="xl:w-1/3 md:w-1/2 w-full xl:px-16 px-8">
+        <div class="header-foot text-sm text-kpgrey">
+          <a class="text-[#878F9A] hover:text-kpblue inline-block mb-3"
+            href="https://www.linkedin.com/company/kpff-consulting-engineers" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <g clip-path="url(#clip0_946_15438)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.84602 6.58436V19.844H0.973432V6.58436H4.84602ZM14.695 6.25401C18.6089 6.25401 19.3327 8.99949 19.3327 12.5709V19.844H15.4673L15.4672 13.2704C15.4644 11.753 15.3862 9.88018 13.4575 9.88018C11.4433 9.88018 11.1361 11.5551 11.1361 13.2848V19.844H7.27224V6.58436H10.9811V8.3959H11.034C11.5498 7.35313 12.8127 6.25401 14.695 6.25401ZM2.91059 -0.0078125C4.14808 -0.0078125 5.153 1.06352 5.153 2.38108C5.153 3.70017 4.14808 4.77074 2.91059 4.77074C1.66731 4.77074 0.666016 3.70017 0.666016 2.38108C0.666016 1.06352 1.66731 -0.0078125 2.91059 -0.0078125Z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </a>
+          <div class="mb-3 flex gap-4">
+            <a class="text-[15px] text-black hover:underline"
+              href="https://www.kpff.com/privacy-policy/">Privacy Policy</a>
+            <a class="text-[15px] text-black hover:underline" href="https://www.kpff.com/eeo-policy">EEO
+              Policy</a>
+          </div>
+          <span class="text-kpgrey opacity-60 inline-block leading-[18px]">© 2024 KPFF Consulting Engineers. <br>All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
